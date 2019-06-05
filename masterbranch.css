@@ -1,6 +1,6 @@
 body {
   background: #0e394b;
-  width: 100%;
+  width: 99%;
   height: 100%;
   font-family: proxima-nova, sans-serif;
 	display: grid;
@@ -49,6 +49,7 @@ body {
 }
 .posts{
 	width: 80%;
+	padding-left: 8%;
 	grid-template-rows: 20% 80%;
   	display: grid;
 }

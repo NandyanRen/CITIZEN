@@ -4,9 +4,33 @@
 <head>
   <title>Home</title>
   <link rel="stylesheet" type="text/css" href="masterbranch.css">
+
 </head>
 
 <body>
+
+  <script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+  return t;
+}
+
+(document, "script", "twitter-wjs"));
+
+</script>
+
   <div class = "left-menu">
     <h1 id = "left-menu-header">Groups</h1>
       <div class = "left-menu-subcontainer">
@@ -34,6 +58,7 @@
   </div>
 
   <div class = "middle-content">
+    <!--
     <div class = "posts">
       <div class = "post-header">
         <div class = "post-header-image"><img src="images/user_icon.png" width="70" height="70"></div>
@@ -50,6 +75,13 @@
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <hr>
       </div>
+    </div>
+  -->
+    <div class = "posts">
+      <a class="twitter-timeline"
+        href="https://twitter.com/ciitph">
+        Tweets by @ciitph
+      </a>
     </div>
   </div>
 
