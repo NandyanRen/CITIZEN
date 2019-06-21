@@ -1,10 +1,114 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*---------- CITIZEN CODE ----------*/
+/*MOBILE VIEW*/
+
 *{
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
 }
-
-/*MOBILE VIEW*/
 
 .wrapper {
 	width: 100%;
@@ -12,9 +116,17 @@
 }
 
 header {
-	background-color: #0e394b;
+	background-color: #1a5e7e;
 	width: 100%;
-	height: 70px;
+	height: auto;
+}
+
+header img.header-logo {
+	width: 35%;
+	height: auto;
+	padding-top: 10px;
+	display: block;
+	margin: 0 auto;
 }
 
 header nav {
@@ -22,13 +134,30 @@ header nav {
 	justify-content: space-between;
 }
 
+header nav ul {
+	display: block;
+	margin: 0 auto;
+}
+
 header nav ul li{
 	display: inline-block;
 	list-style: none;
 	float: left;
+	padding: 10px 20px 10px 20px;
 }
-header nav ul li a{
-	font-family: proxima-nova, sans-serif;
+
+header nav ul li a:link,a:visited,a:active{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 20px;
+	font-size: 3vw;
+	color: #ffffff;
+}
+
+header nav ul li a:hover{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 20px;
+	font-size: 3vw;
+	color: #48c8f5;
 }
 
 /*DESKTOP VIEW*/
@@ -40,90 +169,5 @@ body {
   background: #0e394b;
   width: 100%;
   height: 100%;
-  font-family: proxima-nova, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-
-
-/*
-.left-menu {
-  background: #00364e;
-  color: #f1f3f4;
-  width: 100%;
-  height: 930px;
-  margin-right: 20%;
-  box-shadow: 10px 0px 10px #081f2f;
-}
-
-#left-menu-header{
-	width: 95%;
-	height: 5.5%;
-	background: #1a5e7e;
-	padding-left: 5%;
-	padding-top: 3%;
-}
-
-.left-menu-subcontainer{
-	display: grid;
-	grid-template-rows: 33% 33% 33% 33%;
-}
-
-#left-menu-content{
-	color: #f1f3f4;
-	background-color: #00364e;
-  	border: none;
-	font-size: 24px;
-	font-weight: bold;
-	padding-left: 5%;
-	margin-bottom: 3%;
-}
-
-.posts{
-	width: 80%;
-	padding-left: 8%;
-	grid-template-rows: 20% 80%;
-  	display: grid;
-}
-
-.post-header{
-	display: grid;
-	grid-template-columns: 10% 45% 45%;
-	padding-top: 5%;
-	margin-left: 10%;
-}
-
-.post-header-image{
-	margin-left: 10%
-}
-
-.post-header-author{
-	margin-top: 3%;
-	margin-left: 10%;
-}
-
-#post-header-name{
-	font-size: 24px;
-	font-weight: bold;
-}
-
-#post-header-role{
-	font-size: 18px;
-	font-weight: bold;
-	padding-bottom: 50%
-}
-
-#post-date-time{
-	margin-top: 3%;
-	margin-left: 65%;
-	font-size: 12px;
-	font-weight: bold;
-}
-
-#post-content{
-	margin-left: 23%;
-  	width: 76%;
-  	text-align: justify;
-}
-
-#categories{
-  
-}*/
