@@ -115,18 +115,18 @@ input, select {
 	background: #f1f3f4;
 }
 
-header {
-	background-color: #1a5e7e;
-	width: 100%;
-	height: auto;
-}
-
-header img.header-logo {
+#header-logo {
 	width: 35%;
 	height: auto;
 	padding-top: 10px;
 	display: block;
 	margin: 0 auto;
+}
+
+header {
+	background-color: #1a5e7e;
+	width: 100%;
+	height: auto;
 }
 
 header nav {
@@ -161,7 +161,7 @@ header nav ul li a:hover{
 }
 
 body {
-  background: #0e394b;
+  background-color: #0e394b;
   width: 100%;
   height: 100%;
   font-family: 'Poppins', sans-serif;
@@ -170,13 +170,22 @@ body {
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
 
-    .header-logo{
-        width: 80%;
+    #header-logo{
+        width: 100px;
+        height: auto;
+        padding: 10px 0 10px 10px;
+        margin: 0 0 0 0;
     }
 
     .wrapper{
-        float: right;
-        width: 80%;
+    	width: 80%;
+    	background-color: #0e394b;
+    	float: right;
+    }
+
+    .posts{
+    	max-width: 700px;
+    	margin: 0 auto;
     }
 
     header{
@@ -184,11 +193,8 @@ body {
         position: fixed;
         width: 20%;
         height: 100%;
+        box-shadow: 10px 0px 10px #081f2f;
     }
-
-    header img.header-logo {
-    	width: auto;
-	}
 
 	header nav {
 
@@ -216,6 +222,6 @@ body {
 }
 
 /*DESKTOP VIEW*/
-@media only screen and (min-width:1024px){
+@media only screen and (min-width:1025px){
 
 }
