@@ -170,58 +170,52 @@ body {
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
 
+	#flex-container{
+		display: flex;
+		flex-direction: column;
+	}
+
     #header-logo{
-        width: 100px;
+        width: 70%;
         height: auto;
-        padding: 10px 0 10px 10px;
+        padding: 15px 0 0 15px;
         margin: 0 0 0 0;
     }
 
     .wrapper{
-    	width: 80%;
     	background-color: #0e394b;
-    	float: right;
+    	/*box-shadow: 10px 0px 10px #081f2f inset;*/
+    	flex: 1;
     }
 
     .posts{
-    	max-width: 700px;
+    	max-width: 650px;
     	margin: 0 auto;
     }
 
     header{
-        float: left;
-        position: fixed;
-        width: 20%;
+		flex: 0 0 185px;
+		/*position: fixed;*/
+        width: 185px;
         height: 100%;
-        box-shadow: 10px 0px 10px #081f2f;
     }
 
-	header nav {
+    header nav ul{
+    	display: block;
+    }
 
+    header nav ul li{
+    	padding-top: 20px;
+    }
+
+	header nav ul li a:link,a:visited,a:active,a:hover{
+		font-size: 20px;
+		font-weight: 400;
 	}
 
-	header nav ul {
-
-	}
-
-	header nav ul li{
-
-	}
-
-	header nav ul li a:link,a:visited,a:active{
-
-	}
-
-	header nav ul li a:hover{
-
-	}
-
-	body {
-
-	}
 }
 
 /*DESKTOP VIEW*/
-@media only screen and (min-width:1025px){
+@media only screen and (min-width:1024px){
 
 }
