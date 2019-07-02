@@ -172,7 +172,7 @@ body {
 
 	#flex-container{
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 	}
 
     #header-logo{
@@ -184,7 +184,7 @@ body {
 
     .wrapper{
     	background-color: #0e394b;
-    	/*box-shadow: 10px 0px 10px #081f2f inset;*/
+    	box-shadow: 10px 0px 10px #081f2f inset;
     	flex: 1;
     }
 
@@ -212,7 +212,6 @@ body {
 		font-size: 20px;
 		font-weight: 400;
 	}
-
 }
 
 /*DESKTOP VIEW*/
