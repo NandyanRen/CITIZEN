@@ -2,57 +2,58 @@
 <html>
   
 <head>
+  <meta charset="utf-8">
   <title>Home</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="masterbranch.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
-  <div class = "left-menu">
-    <h1 id = "left-menu-header">Groups</h1>
-      <div class = "left-menu-subcontainer">
-      <div>
-        <a href="index.html">
-          <button id = "left-menu-content" type="button">Twitter</button>
-        </a>
-      </div>
-      <div>
-        <a href="gmail/index.html">
-          <button id = "left-menu-content" type="button">Gmail</button>
-        </a>
-      </div>
-      <div>
-        <a href="facebook/index.html">
-          <button id = "left-menu-content" type="button">Facebook</button></div>
-        </a>
-      </div>
-      <div>
-        <a href="canvas/index.html">
-          <button id = "left-menu-content" type="button">Canvas</button>
-        </a>
-      </div>
-    </div>
-  </div>
+<body class="container">
 
-  <div class = "middle-content">
+  <script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }
+
+  (document, "script", "twitter-wjs"));
+
+  </script>
+
+  <header>
+    <img src="images/Citizen-logo.png" id="header-logo">
+    <hr>
+  	<nav>
+  		<ul>
+  			<li><a href="index.html">Twitter</a></li>
+  			<li><a href="facebook/index.html">Facebook</a></li>
+  			<li><a href="gmail/index.html">Gmail</a></li>
+  		</ul>
+  	</nav>
+  </header>
+
+  <div class = "wrapper">
     <div class = "posts">
-      <div class = "post-header">
-        <div class = "post-header-image"><img src="images/user_icon.png" width="70" height="70"></div>
-        <div class = "post-header-author">
-          <div id = "post-header-name">Sherwin O</div>
-          <div id = "post-header-role">President</div>
-        </div>
-        <div id = "post-date-time">March 16, 2019 18:19
-        </div>
-      </div>
-      <div id = "post-content">
-        <br>
-        <p id = "post-content-text">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <hr>
-      </div>
+      <a class="twitter-timeline"
+        href="https://twitter.com/ciitph">
+      </a>
     </div>
   </div>
-
 
 </body>
  
