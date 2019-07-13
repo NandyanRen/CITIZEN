@@ -123,6 +123,13 @@ input, select {
 	margin: 0 auto;
 }
 
+body {
+  background-color: #0e394b;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
 header {
 	background-color: #1a5e7e;
 	width: 100%;
@@ -165,13 +172,6 @@ header nav ul li a:hover{
 	color: #48c8f5;
 }
 
-body {
-  background-color: #0e394b;
-  width: 100%;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-}
-
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
 
@@ -180,11 +180,6 @@ body {
         height: auto;
         padding: 15px 0 15px 15px;
         margin: 0;
-    }
-
-    .container{
-        display: grid;
-        grid-template-columns: 160px auto;
     }
 
     .wrapper{
@@ -200,6 +195,11 @@ body {
     	margin: 0 auto;
     }
 
+    body {
+        display: grid;
+        grid-template-columns: 160px auto;
+    }
+    
     header{
         grid-column: 1 / span 1;
         width: 100%;
