@@ -46,11 +46,38 @@ import imaplib
 import email
 import re
 import cgi
+from cryptography.fernet import Fernet
+
+# Get the key again (for the demonstration)
+file = open('key.key', 'rb')
+key = file.read()  # The key will be type bytes
+file.close()
+
+# Decrypt the encrypted message
+with open('email.txt.encrypted', 'rb') as f:
+    email_data = f.read()
+
+# Decode the message
+fernet = Fernet(key)
+decrypted_email = fernet.decrypt(email_data)
+
+# Decrypt the encrypted message
+with open('password.txt.encrypted', 'rb') as f:
+    password_data = f.read()
+
+# Decode the message
+fernet = Fernet(key)
+decrypted_password = fernet.decrypt(password_data)
+
+# Converts the byte to string
+user_email = decrypted_email.decode("utf-8")
+user_password = decrypted_password.decode("utf-8")
 
 # Gmail Credentials
-FROM_EMAIL = ''  # Enter your email here
-FROM_PWD = ''  # Enter your email password here
+FROM_EMAIL = user_email  # Enter your email here
+FROM_PWD = user_password  # Enter your email password here
 SMTP_SERVER = 'imap.gmail.com'  # imap.gmail.com is the STMP server to fetch emails.
+
 
 def read_email_from_gmail():
     try:
@@ -79,7 +106,6 @@ def read_email_from_gmail():
                     print('<div id = "post-header-from"><p>From : ' + email_from + '\n</p></div>')
                     print('<div id = "post-header-subject"><p>Subject : ' + email_subject + '\n</p></div>')
 
-
                     for part in msg.walk():  # Since the body of the message is a multiLine and retuns a list instead of string. This msg.walk will decode the message.
                         if part.get_content_type() == "text/plain":
                             email_body = part.get_payload(decode=True)  # Decoder of the Message bytes to list
@@ -101,6 +127,7 @@ def read_email_from_gmail():
 
     except Exception as e:
         print(str(e))  # Prints an error is message is not successfully fetch.
+
 
 read_email_from_gmail()  # Calls the Method to read the messages of the email.
 

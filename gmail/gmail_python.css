@@ -60,12 +60,12 @@ body {
 	margin-left: 10%;
 }
 
-#post-header-from{
+#post-header-subject{
 	font-size: 24px;
 	font-weight: bold;
 }
 
-#post-header-subject{
+#post-header-from{
 	font-size: 18px;
 	font-weight: bold;
 	padding-bottom: 0%
