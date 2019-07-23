@@ -5,9 +5,10 @@ CITIZEN is a CIIT Announcement Aggregator that consists of Twitter, Facebook, an
 ## Installation
 
 Use [xampp](https://www.apachefriends.org/index.html) to use the webapp 
-'''
+
+```
 localhost/CITIZEN
-'''
+```
 
 ## Gmail
 
@@ -18,9 +19,9 @@ Gmail modules needs to be configured in order to work
 2. Add .py
 It should look like this
 
-'''bash
+```
 AddHandler cgi-script .cgi .pl .asp .py
-'''
+```
 
 **readEmail.py**
 
