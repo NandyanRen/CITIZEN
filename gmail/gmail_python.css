@@ -63,6 +63,7 @@ body {
 #post-header-subject{
 	font-size: 24px;
 	font-weight: bold;
+	text-align: left;
 }
 
 #post-header-from{
