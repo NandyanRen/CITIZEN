@@ -34,12 +34,10 @@ AddHandler cgi-script .cgi .pl .asp .py
 python -m pip install Cryptography
 ```
 
-
 **Python Interpreter for Web**
 1. On readEmail.py located at CITIZEN/gmail/
 Line 1 Consists of #!<Directory of Python 2.7 .exe
 2. Change the directory to where your python 2.7 .exe is located
-
 
 ## Gmail Account Configuration
 
