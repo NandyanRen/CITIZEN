@@ -15,7 +15,7 @@ localhost/CITIZEN
 Gmail modules needs to be configured in order to work
 
 **on xampp's httpd.conf**
-1. Search for AddHander
+1. Search for AddHandler
 2. Add .py
 It should look like this
 
