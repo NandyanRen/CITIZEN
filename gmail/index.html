@@ -26,7 +26,59 @@
   </header>
 
   <div class = "wrapper">
+    <?php
+    /* connect to gmail */
+    $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+    $username = 'buenaventura.brent@ciit.edu.ph';
+    $password = 'Tangerine1430';
 
+    /* try to connect */
+    $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail: ' . imap_last_error());
+
+    /* grab emails */
+    $emails = imap_search($inbox,'NEW');
+
+    /* if emails are returned, cycle through each... */
+    if($emails) {
+
+        /* begin output var */
+        $output = '';
+
+        /* put the newest emails on top */
+        //rsort($emails);
+
+        /* for every email... */
+        foreach($emails as $email_number) {
+
+            /* get information specific to this email */
+            $overview = imap_fetch_overview($inbox, $email_number, 0);
+            $message = imap_fetchbody($inbox, $email_number, "1.1"); 
+            $message = str_replace("=", "", $message);
+            echo $message;
+            echo imap_qprint($message);
+            $message = imap_qprint($message);
+            echo imap_8bit ($message);
+            $DateFormatted = str_replace("-0500", "", $overview[0] -> date);
+
+            /* output the email header information */
+            $output .=  $overview[0] -> subject ;
+            $output .=  $DateFormatted ;
+
+            //$bodyFormatted = preg_replace("/This e-mail(.*)/","",$message);
+            //$bodyFormatted = preg_replace("/Ce courriel(.*)/","",$bodyFormatted);
+            /* output the email body */
+            $output .=  $message;
+
+        }
+
+    echo $output;
+
+    }
+
+    /* close the connection */
+    imap_close($inbox);
+
+    ?>
   </div>
 
   <!-- <div class = "middle-content">
