@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Google SignIn</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+		<meta name="google-signin-client_id" content="50193247923-fbgiuu1l1olpvfd6rhujocp0rltra2u8.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="mainscreen.css"/>
+	</head>
+
+	<body>
+		<script>
+			function onSignIn(googleUser)
+				{
+					var profile=googleUser.getBasicProfile();
+					$(".g-signin2").css("display","none");
+					$(".main-container").css("display","block");
+					var vid = document.getElementById("videoPlayer");
+					vid.load();
+					vid.play();
+				}
+		</script>
+
+		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+		<div class="main-container">
+			<div class="top-panel">
+				<button><a href="index.html">Home</a></button>
+				<button>Twitter</button>
+				<button>Facebook</button>
+				<button>Gmail</button>
+				<button>Staff Info</button>
+				<div class="floor-menu-dropdown">
+				  <button class="dropbtn" id="first_floor_image">Floors</button>
+				  <div class="dropdown-content">
+				  <button onclick="first_floor_image()">First Floor</button>
+				  <button onclick="second_floor_image()">Second Floor</button>
+				  <button onclick="third_floor_image()">Third Floor</button>
+				  <button onclick="fourth_floor_image()">Fourth Floor</button>
+				  <button onclick="fifth_floor_image()">Fifth Floor</button>
+				  <button onclick="sixth_floor_image()">Sixth Floor</button>
+				  <button onclick="seventh_floor_image()">Seventh Floor</button>
+				  </div>
+				</div>
+				<!--<button onclick="signOut()" class="btn btn-danger">Sign Out</button>-->
+			</div>
+
+			<div class="video-calendar-divider">
+				<div class="container-left">
+					<div>
+						<p class="welcome">Welcome CIITzen</p>
+					</div>
+					<div class="ciitVideo">
+						<video width="1280" height="720" id="videoPlayer" loop onclick="this.paused ? this.play() : this.pause();">
+						  <source src="ciit.mp4" type="video/mp4">
+						  Your browser does not support the video tag.
+						</video>
+					</div>
+					<div class="floor-image">
+						<img class="floor-layout" width="1280" height="720" src="assets/first_floor_directory.png" alt="First-Floor-Layout" id="floor-layout-image">
+
+						<img class="firstFloor-lobby-thumbnail" src="assets/lobby.jpg" alt="Lobby" id="lobby-image" onmouseenter="lobbyText()">
+					</div>
+					<div>
+						<p id="floor-information" information-text="Lobby">CIIT Philippines - BETTER | What does it take to become BETTER?</p>
+					</div>
+				</div>
+
+				<div class="container-right">
+					<div>
+						<p class="core-values-container">Core Values:
+						MISSION & VISION
+						We are proud to declare the multimedia arts school mission, vision, and goals that we currently fulfill.
+						Vision
+						Leading the way towards a globally competitive Philippines.
+						Mission
+						We commit to improve Filipino lives by empowering the youth through industry-ready, values-driven and accessible education.
+						Core Values
+						Critical Thinking – We use data, reasoning, and resourcefulness as our tools to understand our targets, formulate strategies and achieve our goals.
+						Integrity – We do the right thing even when no one is looking, even if it is the harder thing to do.
+						Innovation – We seek to continuously improve systems, processes and our way of doing things.
+						Teamwork – We achieve our vision together by resolving conflicts and overcoming barriers.
+						Passion – We commit ourselves to careers we are passionate about and share this with others. We love what we do and do what we love.
+						Led by these values, CIIT Philippines will continue to fulfill its multimedia art mission and vision to become the best digital arts school in the country.</p>
+					</div>
+					<div class="calendar-view">
+						<iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%231a5e7e&amp;ctz=Asia%2FManila&amp;src=Y2lpdC5lZHUucGhfbzJhMjlxNTJob2Y4dTc5dm1jZGNzYm1uazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%237CB342&amp;color=%237986CB&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0" style="border-width:0" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+		<div class="dropdown">
+		  <img src="assets/first_floor_directory.png" alt="first_floor" width="100" height="50">
+		  <div class="dropdown-content">
+		  <img src="assets/first_floor_directory.png" alt="first_floor" width="500" height="300">
+		  <div class="desc">Faculty</div>
+		  </div>-->
+		<script>
+			
+			function signOut()
+			{
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function(){
+
+					$(".g-signin2").css("display","block");
+					$(".main-container").css("display","none");
+					var vid = document.getElementById("videoPlayer");
+					vid.pause();
+				});
+			}
+
+			function showFloorImage()
+			{
+				$(".ciitVideo").css("display","none");
+				$(".floor-image").css("display","inherit");
+				$("#floor-information").css("padding-top","10%");
+				var vid = document.getElementById("videoPlayer");
+				vid.pause();
+			}
+
+			function first_floor_image()
+			{
+				showFloorImage();
+				document.getElementById('floor-layout-image').src="assets/first_floor_directory.png";
+			}
+
+			function second_floor_image()
+			{
+				showFloorImage();
+				document.getElementById('floor-layout-image').src="assets/second_floor_directory.png";
+			}
+
+			function third_floor_image()
+			{
+				showFloorImage();
+				document.getElementById('floor-layout-image').src="assets/third_floor_directory.png";
+			}
+
+			function fourth_floor_image()
+			{
+				showFloorImage();
+				document.getElementById('floor-layout-image').src="assets/fourth_floor_directory.png";
+			}
+
+			function fifth_floor_image()
+			{
+				showFloorImage();
+				document.getElementById('floor-layout-image').src="assets/fifth_floor_directory.png";
+			}
+
+			function sixth_floor_image()
+			{
+				showFloorImage();
+				document.getElementById('floor-layout-image').src="assets/sixth_floor_directory.png";
+			}
+
+			function seventh_floor_image()
+			{
+				showFloorImage();
+				document.getElementById('floor-layout-image').src="assets/seventh_floor_directory.png";
+			}		
+		</script>
+
+		<script type="text/javascript">
+			function lobbyText(){
+				document.getElementById("#floor-information").innerHTML = "Lobby";
+			
+			}
+			/*function(){
+				document.getElementById("#floor-information").innerHTML = "First Floor";
+			}*/
+		</script>
+	</body>
+	</html>
