@@ -30,6 +30,7 @@ AddHandler cgi-script .cgi .pl .asp .py
 **Requirements**
 * [Python 2.7.16](https://www.python.org/downloads/) - Gmail module interpreter
 * Cryptography Module - Decryption of user email and password
+* Using CMD as Administrator:
 ```python
 python -m pip install Cryptography
 ```
