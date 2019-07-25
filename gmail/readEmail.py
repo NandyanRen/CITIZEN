@@ -1,43 +1,31 @@
-#!D:/Program Files/Python 2.7.16/python.exe
+#!C:/Python27/python.exe
 
 print("Content-Type: text/html\r\n\r\n")
 print('''
     <head>
-  <title>Home</title>
-  <link rel="stylesheet" type="text/css" href="gmail_python.css">
-</head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Home</title>
+      <link rel="stylesheet" type="text/css" href="gmail_python.css">
+      <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    </head>
 
-<body>
-  <!--<form action="readEmail.py" method="post">-->
-  <div class = "left-menu">
-    <h1 id = "left-menu-header">Groups</h1>
-      <div class = "left-menu-subcontainer">
-      <div>
-        <a href="../index.html">
-          <button id = "left-menu-content" type="button">Twitter</button>
-        </a>
-      </div>
-      <div>
-        <a href="index.html">
-          <button id = "left-menu-content" type="button">Gmail</button>
-        </a>
-      </div>
-      <div>
-        <a href="../facebook/index.html">
-          <button id = "left-menu-content" type="button">Facebook</button></div>
-        </a>
-      </div>
-      <div>
-        <a href="../canvas/index.html">
-        <button id = "left-menu-content" type="button">Canvas</button>
-        </a>
-      </div>
-    </div>
-  </div>
+<body class="container">
 
-  <div class = "middle-content">
+  <header>
+    <img src="../images/Citizen-logo.png" id="header-logo">
+    <hr>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Twitter</a></li>
+        <li><a href="../facebook/index.html">Facebook</a></li>
+        <li><a href="readEmail.py">Gmail</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class = "wrapper">
     <div class = "posts">
-      <div class = "post-header">
       ''')
 
 import smtplib
@@ -48,8 +36,8 @@ import re
 import cgi
 
 # Gmail Credentials
-FROM_EMAIL = ''  # Enter your email here
-FROM_PWD = ''  # Enter your email password here
+FROM_EMAIL = 'buenaventura.brent@ciit.edu.ph'  # Enter your email here
+FROM_PWD = 'Tangerine1430'  # Enter your email password here
 SMTP_SERVER = 'imap.gmail.com'  # imap.gmail.com is the STMP server to fetch emails.
 
 def read_email_from_gmail():
@@ -76,8 +64,8 @@ def read_email_from_gmail():
                     body = ""  # Initialization of body string variable for the body of the message
 
                     # PRINTS RECIPIENT AND SUBJECT OF THE MESSAGE
-                    print('<div id = "post-header-from"><p>From : ' + email_from + '\n</p></div>')
-                    print('<div id = "post-header-subject"><p>Subject : ' + email_subject + '\n</p></div>')
+                    print('<div class = "post-header"><div class = "post-header-from"><p>From : ' + email_from + '\n</p></div>')
+                    print('<div class = "post-header-subject"><p>Subject : ' + email_subject + '\n</p></div></div>')
 
 
                     for part in msg.walk():  # Since the body of the message is a multiLine and retuns a list instead of string. This msg.walk will decode the message.
@@ -93,20 +81,18 @@ def read_email_from_gmail():
                     body = re.sub(r"\n", "<br>", body)  # Replaces all the \r\n to <br>
 
                     # PRINTS THE BODY OF THE MESSAGE
-                    print('<div id = "post-content"><p>' + body + '\n</p><hr>')  # Prints the body of the message
+                    print('<div class = "post-content"><p>' + body + '\n</p><hr></div>')  # Prints the body of the message
 
                     counter += 1
                     if counter == 5:
                         return
-
+        mail.logout()
     except Exception as e:
         print(str(e))  # Prints an error is message is not successfully fetch.
 
 read_email_from_gmail()  # Calls the Method to read the messages of the email.
 
 print('''
-    </div>
-    </div>
     </div>
   </div>
 
