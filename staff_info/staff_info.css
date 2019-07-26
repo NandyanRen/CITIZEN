@@ -111,6 +111,12 @@ input, select {
     text-align: center;
 }
 
+#staff_header {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    font-size: 20px;
+}
+
 #staff_img {
     max-width: 200px;
     max-height: 200px;
@@ -124,6 +130,13 @@ input, select {
     font-size: 25px;
     border-radius: 100%;
     float: left;
+    color: white;
+    background: repeating-linear-gradient(
+      135deg,
+      #1a5e7e,
+      #0e394b 26px
+    );
+    opacity: 0;
 }
 
 #next_button {
@@ -131,12 +144,23 @@ input, select {
     font-size: 25px;
     border-radius: 100%; 
     float: right;
+    color: white;
+    background: repeating-linear-gradient(
+      135deg,
+      #1a5e7e,
+      #0e394b 26px
+    );
 }
 
 #staff_data {
     display: inline-block;
     text-align: center;
+    font-size: 20px;
+    margin-top: 5px;
+}
+#staff_name {
     font-size: 30px;
+    font-weight: bold;
 }
 
 /*---------- CITIZEN CODE ----------*/

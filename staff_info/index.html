@@ -25,14 +25,29 @@
   	</nav>
   </header>
   <div class = "info_card">
+  	<h2 id="staff_header">STAFF INFO</h2>
     <img src="staff_picture/preset_image.png" id="staff_img">
     <hr />
     <button id="previous_button"><--</button>
     <button id="next_button">--></button>
     <div id="staff_data">
-      <h3 id="staff_name">Name</h3>
-      <p id="staff_position">Details</p>
-      <p id="staff_mobile"></p>
+    	<p id="staff_name">Name</p>
+    	<br />
+      	<p id="staff_position">Position</p>
+      	<br />
+      	<p id="staff_mobile">Mobile Number</p>
+      	<br />
+      	<p id="staff_email">Email</p>
+      	<br />
+      	<p id="staff_birthday">Birthday</p>
+        <script type="text/javascript">
+          document.getElementById("staff_img").src = "staff_picture/sp_00000.png";
+          document.getElementById("staff_name").innerHTML = staff_name[i];
+          document.getElementById("staff_position").innerHTML = staff_position[i];
+          document.getElementById("staff_mobile").innerHTML = staff_mobile[i];
+          document.getElementById("staff_email").innerHTML = staff_email[i];
+          document.getElementById("staff_birthday").innerHTML = staff_birthday[i];
+        </script>
     </div>
   </div>
 </body>
