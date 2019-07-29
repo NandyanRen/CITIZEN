@@ -52,7 +52,7 @@
     <hr>
   	<nav>
   		<ul>
-        <li><a href="gmail_login.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Staff Info</a></li>
   			<li><a href="../index.html">Twitter</a></li>
   			<li><a href="../facebook/index.html">Facebook</a></li>
@@ -86,8 +86,8 @@
           </div>
           <div class =floor-image>
             <img class="floor-layout" width="640" height="360" src="assets/first_floor_directory.png" alt="First-Floor-Layout" id="floor-layout-image">
-            <!--
-            <img class="firstFloor-lobby-thumbnail" src="assets/lobby.jpg" alt="Lobby" id="lobby-image" onmouseenter="lobbyText()">-->
+            <img class="firstFloor-lobby-thumbnail" src="assets/lobby.jpg" alt="Lobby" id="lobby-image">
+            <img class="fifthFloor-gallery-thumbnail" src="assets/gallery.jpg" alt="Gallery" id="gallery-image">
           </div>
           <div>
             <center>
@@ -137,10 +137,18 @@
         vid.pause();
       }
 
+      function hideThumbnails()
+      {
+        $(".firstFloor-lobby-thumbnail").css("display","none");
+        $(".fifthFloor-gallery-thumbnail").css("display","none");
+      }
+
       function first_floor_image()
       {
         showFloorImage();
         document.getElementById('floor-layout-image').src="assets/first_floor_directory.png";
+        hideThumbnails()
+        $(".firstFloor-lobby-thumbnail").css("display","block");
       }
 
       function second_floor_image()
@@ -165,6 +173,8 @@
       {
         showFloorImage();
         document.getElementById('floor-layout-image').src="assets/fifth_floor_directory.png";
+        hideThumbnails()
+        $(".fifthFloor-gallery-thumbnail").css("display","block");
       }
 
       function sixth_floor_image()
