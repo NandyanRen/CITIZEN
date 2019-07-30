@@ -113,6 +113,7 @@ input, select {
 .wrapper {
 	width: 100%;
 	background: #f1f3f4;
+    display: none;
 }
 
 .middle-content{
@@ -210,8 +211,9 @@ body {
 }
 
 .g-signin2{
-    margin-left: 560%;
-    margin-top: 300%;
+  position: fixed;
+  top: 45%;
+  left: 33%;
 }
 
 .dropbtn {
@@ -432,7 +434,12 @@ video{
         height: 100%;
     	background-color: #0e394b;
     	box-shadow: 10px 0px 10px #081f2f inset;
-        display: none;
+    }
+
+    .g-signin2{
+      position: fixed;
+      top: 45%;
+      left: 42%;
     }
 
     .dropdown-content button{
@@ -489,7 +496,7 @@ video{
     height: 100%;
     padding-right: 20%;
     margin-top: 630%;
-}
+    }
 
     .ciitVideo{
         margin-right: 6%;
@@ -503,6 +510,12 @@ video{
 
 /*DESKTOP VIEW*/
 @media only screen and (min-width:1280px){
+
+    .g-signin2{
+      position: fixed;
+      top: 50%;
+      left: 49%;
+    }
 
     .middle-content{
         background: #f1f3f4;

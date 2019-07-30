@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,6 +7,18 @@
   </head>
   <body>
     <p>Google Calendar API Quickstart</p>
+
+    <?php 
+    $event_name = $_POST['event_name'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
+    $start_time = $_POST['start_time'];
+    $end_time = $_POST['end_time'];
+    ?>
+
+    <p><?php echo $start_time; ?></p>
+    <p><?php echo $end_time; ?></p>
+
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none;">Authorize</button>
@@ -16,7 +29,7 @@
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '50193247923-fbgiuu1l1olpvfd6rhujocp0rltra2u8.apps.googleusercontent.com';
-      var API_KEY = '<AIzaSyADB8LXSymUqvXXCYP9kEb8znnhyMiGK6A>';
+      var API_KEY = 'AIzaSyADB8LXSymUqvXXCYP9kEb8znnhyMiGK6A';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -104,27 +117,28 @@
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
+
       function listUpcomingEvents() {
-        
-// Refer to the JavaScript quickstart on how to setup the environment:
-// https://developers.google.com/calendar/quickstart/js
-// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-// stored credentials.
+        var eventName = "<?php echo $event_name; ?>";
+        var locationName = "<?php echo $location; ?>";
+        var descriptionName = "<?php echo $description; ?>";
+        var eventStartTime = "<?php echo $start_time; ?>";
+        var eventEndTime = "<?php echo $end_time; ?>";
 
         var event = {
-          'summary': 'CITIZEN TEST 2',
-          'location': 'Philippines',
-          'description': 'A TEST FOR THESIS INSERT CALENDAR',
+          'summary': eventName,
+          'location': locationName,
+          'description': descriptionName,
           'start': {
-            'dateTime': '2019-07-29T13:00:00:00-00:00',
+            'dateTime': eventStartTime  + ":00",
             'timeZone': 'Asia/Manila'
           },
           'end': {
-            'dateTime': '2019-07-29T14:00:00:00-00:00',
+            'dateTime': eventEndTime + ":00",
             'timeZone': 'Asia/Manila'
           },
           'attendees': [
-            {'email': 'undeadknight74@gmail.com'},
+            {'email': 'johnrencveluz@gmail.com'}
           ],
           'reminders': {
             'useDefault': false,
@@ -151,5 +165,5 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
+
   </body>
-</html>

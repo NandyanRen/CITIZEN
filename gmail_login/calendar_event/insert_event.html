@@ -1,77 +1,19 @@
 <!DOCTYPE html>
 <html>
-  
-<head>
-  <meta charset="utf-8">
-  <title>Home</title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="calendar_event.css">
-  <meta charset="utf-8" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
+  <head>
+    <title>Google Calendar API Quickstart</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p>Google Calendar API Quickstart</p>
 
-<body class="container">
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
 
-  <header>
-    <img src="images/Citizen-logo.png" id="header-logo">
-    <hr>
-  	<nav>
-  		<ul>
-  			<li><a href="index.html">Home</a></li>
-        <li><a href="#">Staff Info</a></li>
-        <li><a href="../index.html">Twitter</a></li>
-        <li><a href="../facebook/index.html">Facebook</a></li>
-        <li><a href="../gmail/readEmail.py">Gmail</a></li>
-        <li><a href="calendar_event/index.html">Create Event</a></li>
-        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
-  		</ul>
-  	</nav>
-  </header>
+    <pre id="content" style="white-space: pre-wrap;"></pre>
 
-  <div class = "wrapper">
-    <div class = "middle-content">
-      <br>
-      <center><p class="calendar-event-text">CALENDAR EVENTS</p></center>
-      <br>
-        <div class="calendar-view">
-          <iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%231a5e7e&amp;ctz=Asia%2FManila&amp;src=Y2lpdC5lZHUucGhfbzJhMjlxNTJob2Y4dTc5dm1jZGNzYm1uazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%231a5e7e&amp;color=%237986CB&amp;showNav=1&amp;title=CITIZEN&amp;showPrint=0&amp;showTabs=1&amp;showTz=0&amp;showCalendars=0&amp;mode=MONTH" style="border-width:0" width="845" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-        <div class="create-event">
-          <form action="insert_event.php" method="post" target="_blank">
-            Event Name:
-            <br>
-            <input type="text" name="event_name" value="" size="60" id="event_name">
-            <br>
-            <br>
-            Location:
-            <br>
-            <input type="text" name="location" value="" size="60" id="location">
-            <br>
-            <br>
-            Description:
-            <br>
-            <input type="text" name="description" value="" size="60" id="description">
-            <br>
-            <br>
-            Start Date & Time:
-            <br>
-            <input type="datetime-local" name="start_time" id="start_time">
-            <br>
-            <br>
-            End Date & Time:
-            <br>
-            <input type="datetime-local" name="end_time" id="end_time">
-            <br>
-            <br>
-            <input class="create-event-button" type="submit" value="Create Event">
-          </form> 
-        </div>
-    </div>
-  </div>
-<!--
-  <script type="text/javascript">
+    <script type="text/javascript">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '50193247923-fbgiuu1l1olpvfd6rhujocp0rltra2u8.apps.googleusercontent.com';
       var API_KEY = 'AIzaSyADB8LXSymUqvXXCYP9kEb8znnhyMiGK6A';
@@ -81,7 +23,7 @@
 
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
-      var SCOPES = "https://www.googleapis.com/auth/calendar";
+      var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
@@ -124,9 +66,7 @@
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
-          $("header").css("display","block");
-          $(".wrapper").css("display","block");
-
+          listUpcomingEvents();
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
@@ -153,32 +93,44 @@
        *
        * @param {string} message Text to be placed in pre element.
        */
-       /*
       function appendPre(message) {
         var pre = document.getElementById('content');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
-      }*/
-
-      function getFields(){
-        var eventName = document.getElementById('event_name').value
-        var locationName = document.getElementById('location').value
-        var descriptionName = document.getElementById('description').value
-        var eventStartTime = document.getElementById('start_time').value
-        var eventEndTime = document.getElementById('end_time').value
       }
+
       /**
        * Print the summary and start datetime/date of the next ten events in
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
-      function createEvent() {
+       function getFields(){
+        var eventName = <?php echo $_GET['event_name']; ?>
+        var locationName = <?php echo $_GET['location']; ?>
+        var descriptionName = <?php echo $_GET['description']; ?>
+        var eventStartTime = <?php echo $_GET['start_time']; ?>
+        var eventEndTime = <?php echo $_GET['end_time']; ?>
+      }
+
+      function insertEvent(){
+        getFields();
+        Console.log(eventName);
+        Console.log(locationName);
+        Console.log(descriptionName);
+        Console.log(eventStartTime  + ':00-00:00');
+        Console.log(eventEndTime + ':00-00:00');
+        listUpcomingEvents();
+      }
+
+      function listUpcomingEvents() {
+        getFields();
+        insertEvent();
         var event = {
           'summary': eventName,
           'location': locationName,
           'description': descriptionName,
           'start': {
-            'dateTime': eventStartTime + ':00-00:00',
+            'dateTime': eventStartTime  + ':00-00:00',
             'timeZone': 'Asia/Manila'
           },
           'end': {
@@ -201,21 +153,10 @@
           'calendarId': 'ciit.edu.ph_o2a29q52hof8u79vmcdcsbmnk4@group.calendar.google.com',
           'resource': event
         });
-        /*
+
         request.execute(function(event) {
           appendPre('Event created: ' + event.htmlLink);
         });
-        */
-      }
-
-        function insertEvent(){
-        getFields();
-        Console.log(eventName);
-        Console.log(locationName);
-        Console.log(descriptionName);
-        Console.log(eventStartTime  + ':00-00:00');
-        Console.log(eventEndTime + ':00-00:00');
-        listUpcomingEvents();
       }
 
     </script>
@@ -224,10 +165,4 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-
-    <script type="text/javascript">
-    </script>
--->
-</body>
-
-</html>
+  </body>

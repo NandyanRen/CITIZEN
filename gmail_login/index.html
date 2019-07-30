@@ -18,34 +18,18 @@
 
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-   <script type="text/javascript">
-    /*
-      function loadCalendar(){
-          var calendarIframe = document.createElement("iframe");
-          calendarIframe.setAttribute("src", "https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%231a5e7e&amp;ctz=Asia%2FManila&amp;src=Y2lpdC5lZHUucGhfbzJhMjlxNTJob2Y4dTc5dm1jZGNzYm1uazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%237CB342&amp;color=%237986CB&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0");
-          calendarIframe.style.border-width = "0";
-          calendarIframe.style.width = "640px";
-          calendarIframe.style.height = "360px";
-          calendarIframe.style.frameborder = "0";
-          calendarIframe.style.scrolling = "no";
-          style="border-width:0" width="640" height="360" frameborder="0" scrolling="no"
-          document.getElementById(".calendar-container").appendChild(calendarIframe);
-
-          }*/
-    </script>
-
   <script>
-      function onSignIn(googleUser)
-        {
-          var profile=googleUser.getBasicProfile();
-          $(".g-signin2").css("display","none");
-          $("header").css("display","block");
-          $(".wrapper").css("display","block");
-          var vid = document.getElementById("videoPlayer");
-          vid.load();
-          vid.play();
-        }
-    </script>
+        function onSignIn(googleUser)
+          {
+            var profile=googleUser.getBasicProfile();
+            $(".g-signin2").css("display","none");
+            $("header").css("display","block");
+            $(".wrapper").css("display","block");
+            var vid = document.getElementById("videoPlayer");
+            vid.load();
+            vid.play();
+          }
+  </script>
 
   <header>
     <img src="images/Citizen-logo.png" id="header-logo">
@@ -57,6 +41,7 @@
   			<li><a href="../index.html">Twitter</a></li>
   			<li><a href="../facebook/index.html">Facebook</a></li>
   			<li><a href="../gmail/readEmail.py">Gmail</a></li>
+        <li><a href="calendar_event/index.html">Create Event</a></li>
         <li>
           <div class="floor-menu-dropdown">
             <button class="dropbtn" id="first_floor_image">Floors</button>
@@ -220,7 +205,5 @@
     </script>
 
 </body>
- 
-<script src = "masterbranch.js"></script>
 
 </html>
