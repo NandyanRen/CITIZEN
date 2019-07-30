@@ -293,34 +293,123 @@ video{
     z-index: 1;
 }
 
-.floor-image .firstFloor-lobby-thumbnail{
+.floor-image .firstFloor-lobby-thumbnail, .floor-image .secondFloor-left_wing-thumbnail, .floor-image .secondFloor-right_wing-thumbnail,
+.floor-image .secondFloor-reception-thumbnail, .floor-image .secondFloor-sc_corner-thumbnail, .floor-image .thirdFloor-cashier-thumbnail,
+.floor-image .fourthFloor-faculty-thumbnail, .floor-image .fifthFloor-gallery-thumbnail, .floor-image .sixthFloor-sixth_floor-thumbnail,
+.floor-image .seventhFloor-gym-thumbnail
+{
   position: inherit;
   z-index: 2;
   transition: transform .2s; /* Animation */
-  margin-top: 40%;
-    margin-left: -52%;
-}
-
-.floor-image .fifthFloor-gallery-thumbnail{
-  position: inherit;
-  z-index: 2;
-  transition: transform .2s; /* Animation */
-  margin-top: 40%;
-    margin-left: -52%;
-}
-
-.floor-image .firstFloor-lobby-thumbnail, .floor-image .fifthFloor-gallery-thumbnail {
   width: 8%;
   height: 8%;
 }
 
-.firstFloor-lobby-thumbnail:hover .fifthFloor-gallery-thumbnail:hover {
+.firstFloor-lobby-thumbnail:hover, .secondFloor-left_wing-thumbnail:hover, .secondFloor-right_wing-thumbnail:hover,
+.secondFloor-reception-thumbnail:hover, .secondFloor-sc_corner-thumbnail:hover, .thirdFloor-cashier-thumbnail:hover,
+.fourthFloor-faculty-thumbnail:hover,  .fifthFloor-gallery-thumbnail:hover, .sixthFloor-sixth_floor-thumbnail:hover,
+.seventhFloor-gym-thumbnail:hover
+{
   position: inherit;
   z-index: 2;
-  transform: scale(13); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(12);
 }
 
+.floor-image .firstFloor-lobby-thumbnail{
+  margin-top: 40%;
+    margin-left: -52%;
+}
 
+.floor-image .secondFloor-left_wing-thumbnail{
+  margin-top: 30%;
+    margin-left: -91%;
+}
+
+.secondFloor-left_wing-thumbnail:hover {
+    z-index: 3;
+    padding-left: 5%;
+}
+
+.floor-image .secondFloor-right_wing-thumbnail{
+  margin-top: 30%;
+    margin-left: 56%;
+}
+
+.secondFloor-right_wing-thumbnail:hover {
+    z-index: 3;
+    padding-right: 4%;
+}
+
+.floor-image .secondFloor-reception-thumbnail{
+  margin-top: 22%;
+    margin-left: -43%;
+}
+
+.secondFloor-reception-thumbnail:hover {
+    z-index: 3;
+    padding-left: 1%;
+    padding-top: 2%;
+}
+
+.floor-image .secondFloor-sc_corner-thumbnail{
+  margin-top: 61%;
+    margin-left: 39%;
+}
+
+.secondFloor-sc_corner-thumbnail:hover {
+    z-index: 3;
+    padding-right: 6%;
+    padding-bottom: 3%;
+}
+
+.floor-image .thirdFloor-cashier-thumbnail{
+  margin-top: 56%;
+    margin-left: -35%;
+}
+
+.thirdFloor-cashier-thumbnail:hover {
+    z-index: 3;
+    padding-right: 3%;
+    padding-bottom: 2%;
+}
+
+.floor-image .fourthFloor-faculty-thumbnail{
+  margin-top: 41%;
+    margin-left: -26%;
+}
+
+.fourthFloor-faculty-thumbnail:hover {
+    z-index: 3;
+    padding-right: 5%;
+    padding-bottom: 1%;
+}
+
+.floor-image .fifthFloor-gallery-thumbnail{
+  margin-top: 39%;
+    margin-left: -22%;
+}
+
+.fifthFloor-gallery-thumbnail:hover {
+    padding-right: 5%;
+}
+
+.floor-image .sixthFloor-sixth_floor-thumbnail{
+  margin-top: 38%;
+    margin-left: -64%;
+}
+
+.sixthFloor-sixth_floor-thumbnail:hover {
+    padding-left: 2%;
+}
+
+.floor-image .seventhFloor-gym-thumbnail{
+  margin-top: 32%;
+    margin-left: -54%;
+}
+
+.seventhFloor-gym-thumbnail:hover {
+    padding-right: 0%;
+}
 
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
@@ -433,18 +522,12 @@ video{
         margin-right: 5%;
     }
 
-    .floor-image .firstFloor-lobby-thumbnail{
-      margin-top: 40%;
-      margin-left: -52%;
-    }
-
-    .floor-image .firstFloor-lobby-thumbnail, .floor-image .fifthFloor-gallery-thumbnail {
-      width: 8%;
-      height: 8%;
-    }
-
-    .firstFloor-lobby-thumbnail:hover {
-      transform: scale(13); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    .firstFloor-lobby-thumbnail:hover, .secondFloor-left_wing-thumbnail:hover, .secondFloor-right_wing-thumbnail:hover,
+    .secondFloor-reception-thumbnail:hover, .secondFloor-sc_corner-thumbnail:hover, .thirdFloor-cashier-thumbnail:hover,
+    .fourthFloor-faculty-thumbnail:hover,  .fifthFloor-gallery-thumbnail:hover, .sixthFloor-sixth_floor-thumbnail:hover,
+    .seventhFloor-gym-thumbnail:hover
+    {
+      transform: scale(13);
     }
 
 }
