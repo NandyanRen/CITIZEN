@@ -7,11 +7,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="staff_info.css">
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
 
 </head>
 
 <body class="container">
+
   <header>
     <img src="../images/Citizen-logo.png" id="header-logo">
     <hr>
@@ -24,22 +25,27 @@
   		</ul>
   	</nav>
   </header>
+
   <div class = "info_card">
-  	<h2 id="staff_header">STAFF INFO</h2>
-    <img src="staff_picture/preset_image.png" id="staff_img">
-    <hr />
-    <button id="previous_button"><--</button>
-    <button id="next_button">--></button>
+    <div class = "staff_header_box">
+    	<span id="staff_header">STAFF INFO</span>
+      <div class = "profile_selector_container">
+        <button id="previous_button">&laquo</button>
+        <img src="staff_picture/preset_image.png" id="staff_img">
+        <button id="next_button">&raquo</button>
+      </div>
+    </div>
+
     <div id="staff_data">
     	<p id="staff_name">Name</p>
     	<br />
       	<p id="staff_position">Position</p>
       	<br />
-      	<p id="staff_mobile">Mobile Number</p>
+      	<p id="staff_mobile">mobile number</p>
       	<br />
-      	<p id="staff_email">Email</p>
+      	<p id="staff_email">email</p>
       	<br />
-      	<p id="staff_birthday">Date of Birth</p>
+      	<p id="staff_birthday">birthday</p>
         <script type="text/javascript">
           /*     Opens first entry in text database     */
           document.getElementById("staff_img").src = "staff_picture/sp_00000.png";
