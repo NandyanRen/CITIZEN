@@ -55,26 +55,17 @@ body {
 
 .post-header{
 	display: grid;
-	grid-template-columns: 10% 45% 45%;
+	grid-template-rows: : 2% 2%;
 	padding-top: 5%;
 	margin-left: 10%;
 }
 
-.post-header-image{
-	margin-left: 10%
-}
-
-.post-header-author{
-	margin-top: 3%;
-	margin-left: 10%;
-}
-
-#post-header-name{
+#post-header-subject{
 	font-size: 24px;
 	font-weight: bold;
 }
 
-#post-header-role{
+#post-header-from{
 	font-size: 18px;
 	font-weight: bold;
 	padding-bottom: 50%
@@ -88,7 +79,7 @@ body {
 }
 
 #post-content{
-	margin-left: 23%;
+	margin-left: 0%;
   	width: 76%;
   	text-align: justify;
 }
