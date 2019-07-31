@@ -1,0 +1,552 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*---------- CITIZEN CODE ----------*/
+/*MOBILE VIEW*/
+
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+.wrapper {
+	width: 100%;
+	background: #f1f3f4;
+    display: none;
+}
+
+.middle-content{
+        background: #f1f3f4;
+        max-width: 675px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5%;
+        padding-top: 1%;
+    }
+
+.core-values-container{
+    margin: 2%;
+    padding-right: 7%;
+}
+
+#header-logo {
+	width: 35%;
+	height: auto;
+	padding: 20px 0 20px 0;
+	display: block;
+	margin: 0 auto;
+}
+
+header {
+    display: none;
+	background-color: #1a5e7e;
+	width: 100%;
+	height: auto;
+}
+
+header hr{
+    padding: 0;
+    margin: 0;
+}
+
+header nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+header nav ul {
+	display: block;
+	margin: 0 auto;
+}
+
+header nav ul li{
+	display: inline-block;
+	list-style: none;
+	float: left;
+	padding: 10px 30px 10px 30px;
+}
+
+header nav ul li a:link,a:visited,a:active{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 3vw;
+	color: #ffffff;
+}
+
+header nav ul li a:hover{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 3vw;
+	color: #48c8f5;
+}
+
+header nav ul li button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 3vw;
+    color: #ffffff;
+
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    text-align: left;
+}
+
+header nav ul li button:hover{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 3vw;
+    color: #48c8f5;
+}
+
+body {
+  background-color: #0e394b;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.g-signin2{
+  position: fixed;
+  top: 45%;
+  left: 33%;
+}
+
+.dropbtn {
+  width: 100%;
+  height: 100%;
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.floor-menu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 290%;
+  height: 180%;
+  z-index: 2;
+}
+
+.dropdown-content button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-right: 25%;
+  background: #0e394b;
+}
+
+.floor-menu-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.ciitVideo{
+    display: block;
+    margin-right: 4%;
+}
+
+.floor-image{
+    display: none;
+    margin-right: 4%;
+}
+
+.signOutButton{
+    display: block;
+    width: 150%;
+    height: 100%;
+}
+
+video{
+    width: 100%;
+    height: auto;
+}
+
+.floor-image img{
+    width: 100%;
+    height: auto;
+}
+
+.calendar-view{
+    position: relative;
+    height: 350px;
+    padding-right: 5%;
+    margin-bottom: 2%;
+}
+
+.calendar-view iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.floor-layout{
+    z-index: 1;
+}
+
+.floor-image .firstFloor-lobby-thumbnail, .floor-image .secondFloor-left_wing-thumbnail, .floor-image .secondFloor-right_wing-thumbnail,
+.floor-image .secondFloor-reception-thumbnail, .floor-image .secondFloor-sc_corner-thumbnail, .floor-image .thirdFloor-cashier-thumbnail,
+.floor-image .fourthFloor-faculty-thumbnail, .floor-image .fifthFloor-gallery-thumbnail, .floor-image .sixthFloor-sixth_floor-thumbnail,
+.floor-image .seventhFloor-gym-thumbnail
+{
+  position: inherit;
+  z-index: 2;
+  transition: transform .2s; /* Animation */
+  width: 8%;
+  height: 8%;
+}
+
+.firstFloor-lobby-thumbnail:hover, .secondFloor-left_wing-thumbnail:hover, .secondFloor-right_wing-thumbnail:hover,
+.secondFloor-reception-thumbnail:hover, .secondFloor-sc_corner-thumbnail:hover, .thirdFloor-cashier-thumbnail:hover,
+.fourthFloor-faculty-thumbnail:hover,  .fifthFloor-gallery-thumbnail:hover, .sixthFloor-sixth_floor-thumbnail:hover,
+.seventhFloor-gym-thumbnail:hover
+{
+  position: inherit;
+  z-index: 2;
+  transform: scale(12);
+}
+
+.floor-image .firstFloor-lobby-thumbnail{
+  margin-top: 40%;
+    margin-left: -52%;
+}
+
+.floor-image .secondFloor-left_wing-thumbnail{
+  margin-top: 30%;
+    margin-left: -91%;
+}
+
+.secondFloor-left_wing-thumbnail:hover {
+    z-index: 3;
+    padding-left: 5%;
+}
+
+.floor-image .secondFloor-right_wing-thumbnail{
+  margin-top: 30%;
+    margin-left: 56%;
+}
+
+.secondFloor-right_wing-thumbnail:hover {
+    z-index: 3;
+    padding-right: 4%;
+}
+
+.floor-image .secondFloor-reception-thumbnail{
+  margin-top: 22%;
+    margin-left: -43%;
+}
+
+.secondFloor-reception-thumbnail:hover {
+    z-index: 3;
+    padding-left: 1%;
+    padding-top: 2%;
+}
+
+.floor-image .secondFloor-sc_corner-thumbnail{
+  margin-top: 61%;
+    margin-left: 39%;
+}
+
+.secondFloor-sc_corner-thumbnail:hover {
+    z-index: 3;
+    padding-right: 6%;
+    padding-bottom: 3%;
+}
+
+.floor-image .thirdFloor-cashier-thumbnail{
+  margin-top: 56%;
+    margin-left: -35%;
+}
+
+.thirdFloor-cashier-thumbnail:hover {
+    z-index: 3;
+    padding-right: 3%;
+    padding-bottom: 2%;
+}
+
+.floor-image .fourthFloor-faculty-thumbnail{
+  margin-top: 41%;
+    margin-left: -26%;
+}
+
+.fourthFloor-faculty-thumbnail:hover {
+    z-index: 3;
+    padding-right: 5%;
+    padding-bottom: 1%;
+}
+
+.floor-image .fifthFloor-gallery-thumbnail{
+  margin-top: 39%;
+    margin-left: -22%;
+}
+
+.fifthFloor-gallery-thumbnail:hover {
+    padding-right: 5%;
+}
+
+.floor-image .sixthFloor-sixth_floor-thumbnail{
+  margin-top: 38%;
+    margin-left: -64%;
+}
+
+.sixthFloor-sixth_floor-thumbnail:hover {
+    padding-left: 2%;
+}
+
+.floor-image .seventhFloor-gym-thumbnail{
+  margin-top: 32%;
+    margin-left: -54%;
+}
+
+.seventhFloor-gym-thumbnail:hover {
+    padding-right: 0%;
+}
+
+/*TABLET VIEW*/
+@media only screen and (min-width:768px){
+
+	#header-logo{
+        width: 70%;
+        height: auto;
+        padding: 15px 0 15px 15px;
+        margin: 0;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 160px auto;
+    }
+
+    .wrapper{
+        grid-column: 2 / span 1;
+        width: 100%;
+        height: 100%;
+    	background-color: #0e394b;
+    	box-shadow: 10px 0px 10px #081f2f inset;
+    }
+
+    .g-signin2{
+      position: fixed;
+      top: 45%;
+      left: 42%;
+    }
+
+    .dropdown-content button{
+      background: transparent;
+    }
+
+    .middle-content{
+        background: #f1f3f4;
+    	max-width: 675px;
+    	margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5%;
+        padding-top: 1%;
+    }
+
+    .core-values-container{
+        padding-right: 7.5%;
+    }
+
+    header{
+        grid-column: 1 / span 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    header hr{
+        padding-bottom: 15px;
+    }
+
+    header nav ul li{
+    	padding-bottom: 20px;
+        display: block;
+    }
+
+	header nav ul li a:link,a:visited,a:active,a:hover{
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+    header nav ul li button{
+    font-size: 20px;
+    font-weight: 400;
+    }
+
+    header nav ul li button:hover{
+    font-size: 20px;
+    font-weight: 400;
+    }
+
+    .signOutButton{
+    display: block;
+    width: 150%;
+    height: 100%;
+    padding-right: 20%;
+    margin-top: 630%;
+    }
+
+    .ciitVideo{
+        margin-right: 6%;
+    }
+
+    .floor-image{
+    margin-right: 6%;
+    }
+
+}
+
+/*DESKTOP VIEW*/
+@media only screen and (min-width:1280px){
+
+    .g-signin2{
+      position: fixed;
+      top: 50%;
+      left: 49%;
+    }
+
+    .middle-content{
+        background: #f1f3f4;
+        max-width: 675px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2%;
+        padding-top: 1%;
+    }
+
+    .ciitVideo{
+        margin-right: 5%;
+    }
+
+    .floor-image{
+        margin-right: 5%;
+    }
+
+    .firstFloor-lobby-thumbnail:hover, .secondFloor-left_wing-thumbnail:hover, .secondFloor-right_wing-thumbnail:hover,
+    .secondFloor-reception-thumbnail:hover, .secondFloor-sc_corner-thumbnail:hover, .thirdFloor-cashier-thumbnail:hover,
+    .fourthFloor-faculty-thumbnail:hover,  .fifthFloor-gallery-thumbnail:hover, .sixthFloor-sixth_floor-thumbnail:hover,
+    .seventhFloor-gym-thumbnail:hover
+    {
+      transform: scale(13);
+    }
+
+}
+
+@media only screen and (min-height: 940px) and (min-width: 768px){
+    html,body{
+         overflow: hidden;
+    }
+}
