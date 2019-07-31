@@ -1,4 +1,4 @@
-#!D:/Program Files/Python 2.7.16/python.exe
+#!C:/Python27/python.exe
 
 print("Content-Type: text/html\r\n\r\n")
 print('''
