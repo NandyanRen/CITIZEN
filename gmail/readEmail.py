@@ -2,12 +2,14 @@
 
 print("Content-Type: text/html\r\n\r\n")
 print('''
+<!DOCTYPE html>
+<html>
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Home</title>
       <link rel="stylesheet" type="text/css" href="gmail_python.css">
-      <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
     </head>
 
 <body class="container">
@@ -18,11 +20,11 @@ print('''
     <nav>
       <ul>
         <li><a href="../gmail_login/index.html">Home</a></li>
+        <li><a href="../index.html">Twitter</a></li>
+        <li><a href="../facebook/index.html">Facebook</a></li>
+        <li><a href="readEmail.py">Gmail</a></li>
         <li><a href="../staff_info/index.html">Staff Info</a></li>
-            <li><a href="../index.html">Twitter</a></li>
-            <li><a href="../facebook/index.html">Facebook</a></li>
-            <li><a href="readEmail.py">Gmail</a></li>
-            <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
+        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
       </ul>
     </nav>
   </header>
