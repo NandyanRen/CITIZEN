@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <title>Control Panel</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="control_panel.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="container" onload="check_db();">
+  <header>
+    <img src="../../images/Citizen-logo.png" id="header-logo">
+    <hr>
+  	<nav>
+  		<ul>
+          <li><a href="control_panel.html">Control Panel</a></li>
+    			<li><a href="staff_reg.html">Register</a></li>
+    			<li><a href="staff_update.html">Update</a></li>
+    			<li><a href="staff_delete.html">Delete</a></li>
+  		</ul>
+  	</nav>
+  </header>
+
+
+
+  <script type="text/javascript">
+    var file_check = <?php 
+        if(file_exists('../staff_db.txt')) {
+          echo 1;
+        }
+        else {
+          echo 0; 
+        }
+      ?>;
+
+    /*     UPDATES STATUS IF STAFF_DB.TXT EXISTS     */
+    function check_db() {
+      var file_check = <?php 
+        if(file_exists('../staff_db.txt')) {
+          echo 1;
+        }
+        else {
+          echo 0;
+        }
+      ?>;
+      if (file_check === 1) {
+        document.getElementById("finding_status").innerHTML = "staff_db.txt is found.";
+        document.getElementById("finding_status").style.color = "green";
+      }
+      else {
+        document.getElementById("finding_status").innerHTML = "staff_db.txt is missing!";
+        document.getElementById("finding_status").style.color = "red";
+      }
+    }
+    /*     RELOAD PAGE     */
+    function misDir() {
+      window.location.reload();
+    }
+
+    function dbCreate() {
+      
+      if (file_check === 1) {
+        document.getElementById("create_status").innerHTML = "Can't create because staff_db.txt exists!";
+        document.getElementById("create_status").style.color = "red";
+      }
+      else {
+        window.location.href = "dbcreator.php";
+      }
+    }
+  </script>
+
+
+
+  <div id="wrapper">
+    <p>Check for file before attempting to create staff_db.txt.</p><br /><br />
+    <button onclick="misDir();">Check for staff_db</button>
+    <p>Text Database status:</p>
+    <p id="finding_status" name="find_button"></p><br /><br />
+    <button onclick="dbCreate();">Create staff_db</button>
+    <p id="create_status" name="create_button">---</p>
+  </div>
+</body>
+</html>
