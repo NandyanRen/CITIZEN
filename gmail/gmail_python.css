@@ -143,6 +143,7 @@ input, select {
 
 .post-header-subject{
 	font-size: 5vw;
+}
 
 .post-content{
 	font-weight: 600;
@@ -189,6 +190,27 @@ header nav ul li a:hover{
 	font-weight: 500;
 	font-size: 3vw;
 	color: #48c8f5;
+}
+
+header nav ul li button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 3vw;
+    color: #ffffff;
+
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    text-align: left;
+}
+
+header nav ul li button:hover{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 3vw;
+    color: #48c8f5;
 }
 
 body {
@@ -264,4 +286,16 @@ body {
 		font-size: 20px;
 		font-weight: 400;
 	}
+
+    .signOutButton{
+    display: block;
+    width: 150%;
+    height: 100%;
+    padding-right: 20%;
+    font-size: 20px;
+    }
+
+    .signOutButton:hover{
+    font-size: 20px;
+    }
 }
