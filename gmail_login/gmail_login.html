@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <title>CITIZEN</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="gmail_login.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <meta name="google-signin-client_id" content="50193247923-fbgiuu1l1olpvfd6rhujocp0rltra2u8.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body class="container">
+
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+   <script type="text/javascript">
+    /*
+      function loadCalendar(){
+          var calendarIframe = document.createElement("iframe");
+          calendarIframe.setAttribute("src", "https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%231a5e7e&amp;ctz=Asia%2FManila&amp;src=Y2lpdC5lZHUucGhfbzJhMjlxNTJob2Y4dTc5dm1jZGNzYm1uazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%237CB342&amp;color=%237986CB&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0");
+          calendarIframe.style.border-width = "0";
+          calendarIframe.style.width = "640px";
+          calendarIframe.style.height = "360px";
+          calendarIframe.style.frameborder = "0";
+          calendarIframe.style.scrolling = "no";
+          style="border-width:0" width="640" height="360" frameborder="0" scrolling="no"
+          document.getElementById(".calendar-container").appendChild(calendarIframe);
+
+          }*/
+    </script>
+
+  <script>
+      function onSignIn(googleUser)
+        {
+          var profile=googleUser.getBasicProfile();
+          $(".g-signin2").css("display","none");
+          $("header").css("display","block");
+          $(".wrapper").css("display","block");
+          var vid = document.getElementById("videoPlayer");
+          vid.load();
+          vid.play();
+          setTimeout(function(){ document.getElementById('calendar-frame').location.reload(); }, 3000);
+        }
+    </script>
+
+  <header>
+    <img src="images/Citizen-logo.png" id="header-logo">
+    <hr>
+  	<nav>
+  		<ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Staff Info</a></li>
+  			<li><a href="../index.html">Twitter</a></li>
+  			<li><a href="../facebook/index.html">Facebook</a></li>
+  			<li><a href="../gmail/readEmail.py">Gmail</a></li>
+        <li>
+          <div class="floor-menu-dropdown">
+            <button class="dropbtn" id="first_floor_image">Floors</button>
+            <div class="dropdown-content">
+              <button onclick="first_floor_image()">First Floor</button>
+              <button onclick="second_floor_image()">Second Floor</button>
+              <button onclick="third_floor_image()">Third Floor</button>
+              <button onclick="fourth_floor_image()">Fourth Floor</button>
+              <button onclick="fifth_floor_image()">Fifth Floor</button>
+              <button onclick="sixth_floor_image()">Sixth Floor</button>
+              <button onclick="seventh_floor_image()">Seventh Floor</button>
+            </div>
+          </div>
+        </li>
+        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
+  		</ul>
+  	</nav>
+  </header>
+
+  <div class = "wrapper">
+    <div class = "middle-content">
+      <div class="ciitVideo">
+            <video width="640" height="360" id="videoPlayer" loop onclick="this.paused ? this.play() : this.pause();">
+              <source src="ciit.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="floor-image">
+            <img class="floor-layout" width="640" height="360" src="assets/first_floor_directory.png" alt="First-Floor-Layout" id="floor-layout-image">
+            <img class="firstFloor-lobby-thumbnail" src="assets/lobby.jpg" alt="Lobby" id="lobby-image">
+            <img class="fifthFloor-gallery-thumbnail" src="assets/gallery.jpg" alt="Gallery" id="gallery-image">
+          </div>
+          <div>
+            <center>
+              <p class="core-values-container">
+                MISSION & VISION
+                <br><br>
+                We are proud to declare the multimedia arts school mission, vision, and goals that we currently fulfill.
+                <br>
+                <br>
+                Vision
+                <br><br>
+                Leading the way towards a globally competitive Philippines.
+                <br>
+                <br>
+                Mission
+                <br><br>
+                We commit to improve Filipino lives by empowering the youth through industry-ready, values-driven and accessible education.
+              </p>
+            </center>
+          </div>
+          <div class="calendar-view" id="calendar-container">
+            <iframe id="calendar-frame" src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%231a5e7e&amp;ctz=Asia%2FManila&amp;src=Y2lpdC5lZHUucGhfbzJhMjlxNTJob2Y4dTc5dm1jZGNzYm1uazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%237CB342&amp;color=%237986CB&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0" style="border-width:0" width="640" height="360" frameborder="0" scrolling="no">
+            </iframe>
+          </div>
+    </div>
+  </div>
+
+  <script>
+      
+      function signOut()
+      {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function(){
+
+          $(".g-signin2").css("display","block");
+          $(".main-container").css("display","none");
+          var vid = document.getElementById("videoPlayer");
+          vid.pause();
+        });
+      }
+
+      function showFloorImage()
+      {
+        $(".ciitVideo").css("display","none");
+        $(".floor-image").css("display","inherit");
+        var vid = document.getElementById("videoPlayer");
+        vid.pause();
+      }
+
+      function hideThumbnails()
+      {
+        $(".firstFloor-lobby-thumbnail").css("display","none");
+        $(".fifthFloor-gallery-thumbnail").css("display","none");
+      }
+
+      function first_floor_image()
+      {
+        showFloorImage();
+        document.getElementById('floor-layout-image').src="assets/first_floor_directory.png";
+        hideThumbnails()
+        $(".firstFloor-lobby-thumbnail").css("display","block");
+      }
+
+      function second_floor_image()
+      {
+        showFloorImage();
+        document.getElementById('floor-layout-image').src="assets/second_floor_directory.png";
+      }
+
+      function third_floor_image()
+      {
+        showFloorImage();
+        document.getElementById('floor-layout-image').src="assets/third_floor_directory.png";
+      }
+
+      function fourth_floor_image()
+      {
+        showFloorImage();
+        document.getElementById('floor-layout-image').src="assets/fourth_floor_directory.png";
+      }
+
+      function fifth_floor_image()
+      {
+        showFloorImage();
+        document.getElementById('floor-layout-image').src="assets/fifth_floor_directory.png";
+        hideThumbnails()
+        $(".fifthFloor-gallery-thumbnail").css("display","block");
+      }
+
+      function sixth_floor_image()
+      {
+        showFloorImage();
+        document.getElementById('floor-layout-image').src="assets/sixth_floor_directory.png";
+      }
+
+      function seventh_floor_image()
+      {
+        showFloorImage();
+        document.getElementById('floor-layout-image').src="assets/seventh_floor_directory.png";
+      }   
+    </script>
+
+</body>
+</html>

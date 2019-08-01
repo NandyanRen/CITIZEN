@@ -6,8 +6,6 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <p>Google Calendar API Quickstart</p>
-
     <?php 
     $event_name = $_POST['event_name'];
     $location = $_POST['location'];
@@ -15,10 +13,6 @@
     $start_time = $_POST['start_time'];
     $end_time = $_POST['end_time'];
     ?>
-
-    <p><?php echo $start_time; ?></p>
-    <p><?php echo $end_time; ?></p>
-
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none;">Authorize</button>
@@ -110,6 +104,7 @@
         var pre = document.getElementById('content');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
+        setTimeout(function(){ window.close(); }, 3000);
       }
 
       /**
@@ -155,7 +150,7 @@
         });
 
         request.execute(function(event) {
-          appendPre('Event created: ' + event.htmlLink);
+          appendPre('EVENT SUCCESSFULLY CREATED!! \n window will close in 3 seconds');
         });
       }
 
