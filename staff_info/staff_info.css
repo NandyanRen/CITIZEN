@@ -33,9 +33,9 @@ html {
 }
 
 body {
-    line-height:1;
+    height: 100%;
     width: 100%;
-    height: 100%
+    line-height:1;
 }
 
 article,aside,details,figcaption,figure,
@@ -99,10 +99,9 @@ hr {
     display:block;
     height:1px;
     border:0;   
-    border-top:1px solid #000000;
+    border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
-    color: #000000;
 }
 
 input, select {
@@ -120,6 +119,19 @@ input, select {
 	margin: 0 auto;
 }
 
+.signOutButton{
+        display: block;
+        width: 150%;
+        height: 100%;
+        padding-right: 20%;
+        margin-top: 610%;
+        font-size: 20px;
+    }
+
+.signOutButton:hover{
+    font-size: 20px;
+}
+    
 header {
 	background-color: #1a5e7e;
 	width: 100%;
@@ -315,19 +327,6 @@ body {
 		font-size: 20px;
 		font-weight: 400;
 	}
-
-    .signOutButton{
-        display: block;
-        width: 150%;
-        height: 100%;
-        padding-right: 20%;
-        margin-top: 610%;
-        font-size: 20px;
-    }
-
-    .signOutButton:hover{
-        font-size: 20px;
-    }
 
 }
 

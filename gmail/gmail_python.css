@@ -27,7 +27,14 @@ time, mark, audio, video {
     background:transparent;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
+    height: 100%;
+    width: 100%;
     line-height:1;
 }
 
