@@ -2,66 +2,87 @@
 <html>
   
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
   <title>Home</title>
-  <link rel="stylesheet" type="text/css" href="gmail.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../masterbranch.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <!--<form action="readEmail.py" method="post">-->
-  <div class = "left-menu">
-    <h1 id = "left-menu-header">Groups</h1>
-      <div class = "left-menu-subcontainer">
-      <div>
-        <a href="../index.html">
-          <button id = "left-menu-content" type="button">Twitter</button>
-        </a>
-      </div>
-      <div>
-        <a href="readEmail.py">
-          <button id = "left-menu-content" type="button">Gmail</button>
-        </a>
-      </div>
-      <div>
-        <a href="../facebook/index.html">
-          <button id = "left-menu-content" type="button">Facebook</button></div>
-        </a>
-      </div>
-      <div>
-        <a href="../canvas/index.html">
-        <button id = "left-menu-content" type="button">Canvas</button>
-        </a>
-      </div>
-    </div>
-  </div>
+<body class = "container">
 
-  <div class = "middle-content">
-    <div class = "posts">
-      <div class = "post-header">
-        <div class = "post-header-image"></div>
-        <div class = "post-header-author">
-          <div id = "post-header-name">sao ciit</div>
-        <div id = "post-header-role">sao@ciit.edu.ph</div>
-        </div>
-        <div id = "post-date-time">May 1, 2019  
-              <br> 8:45
-        </div>
-      </div>
-      <div id = "post-content">
-        <br>
-        <p>
-        Dear CIITzens,
-        <br>
-        <br>
-        Greeting!
-        <br>
-        <br>
-        "CODIFY" is a week-long celebration of BSCS and BSEMC with this year's theme "Groundwork for Emerging Technologies" on July 01 - 05, 2019. All students are very welcome for the exchange of technique, skills, and craft of CIITzen CIIT community in developing technology solutions and a showcase of knowledge in ICT. Please find the attachment for the schedule of activities.
-        </p>
-        <hr>
-      </div>
-    </div>
-  </div>
+  <header>
+    <img src="../images/Citizen-logo.png" id="header-logo">
+    <hr>
+    <nav>
+      <ul>
+        <li><a href="../gmail_login/index.html">Home</a></li>
+        <li><a href="../index.html">Twitter</a></li>
+        <li><a href="../facebook/index.html">Facebook</a></li>
+        <li><a href="readEmail.py">Gmail</a></li>
+        <li><a href="../staff_info/index.html">Staff Info</a></li>
+        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
+      </ul>
+    </nav>
+  </header>
 
+  <div class = "wrapper">
+    <?php
+    /* connect to gmail */
+    $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+    $username = 'buenaventura.brent@ciit.edu.ph';
+    $password = 'Tangerine1430';
+
+    /* try to connect */
+    $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail: ' . imap_last_error());
+
+    /* grab emails */
+    $emails = imap_search($inbox,'NEW');
+
+    /* if emails are returned, cycle through each... */
+    if($emails) {
+
+        /* begin output var */
+        $output = '';
+
+        /* put the newest emails on top */
+        //rsort($emails);
+
+        /* for every email... */
+        foreach($emails as $email_number) {
+
+            /* get information specific to this email */
+            $overview = imap_fetch_overview($inbox, $email_number, 0);
+            $message = imap_fetchbody($inbox, $email_number, "1.1"); 
+            $message = str_replace("=", "", $message);
+            echo $message;
+            echo imap_qprint($message);
+            $message = imap_qprint($message);
+            echo imap_8bit ($message);
+            $DateFormatted = str_replace("-0500", "", $overview[0] -> date);
+
+            /* output the email header information */
+            $output .=  $overview[0] -> subject ;
+            $output .=  $DateFormatted ;
+
+            //$bodyFormatted = preg_replace("/This e-mail(.*)/","",$message);
+            //$bodyFormatted = preg_replace("/Ce courriel(.*)/","",$bodyFormatted);
+            /* output the email body */
+            $output .=  $message;
+
+        }
+
+    echo $output;
+
+    }
+
+    /* close the connection */
+    imap_close($inbox);
+
+    ?>
+  </div>
 
 </body>
   

@@ -2,7 +2,7 @@
 <html>
   
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Home</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="container">
+<body class = "container">
 
   <script>
   window.twttr = (function(d, s, id) {
@@ -34,17 +34,15 @@
   (document, "script", "twitter-wjs"));
 
   </script>
+
   <header>
     <img src="images/Citizen-logo.png" id="header-logo">
     <hr>
   	<nav>
   		<ul>
-  			<li><a href="gmail_login/index.html">Home</a></li>
-        <li><a href="index.html">Twitter</a></li>
-        <li><a href="facebook/index.html">Facebook</a></li>
-        <li><a href="gmail/readEmail.py">Gmail</a></li>
-        <li><a href="staff_info/index.html">Staff</a></li>
-        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
+  			<li><a href="index.html">Twitter</a></li>
+  			<li><a href="facebook/index.html">Facebook</a></li>
+  			<li><a href="gmail/index.html">Gmail</a></li>
   		</ul>
   	</nav>
   </header>
@@ -52,7 +50,8 @@
   <div class = "wrapper">
     <div class = "posts">
       <a class="twitter-timeline"
-        href="https://twitter.com/ciitph">
+        href="https://twitter.com/ciitph"
+        data-chrome="nofooter noheader noborders">
       </a>
     </div>
   </div>
