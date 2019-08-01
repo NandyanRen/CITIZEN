@@ -12,7 +12,7 @@
 	$staff_email = $_POST['staff_email'];
 	$staff_birthday = $_POST['staff_birthday'];
 	$filename = $_FILES['staff_img']['name'];
-	
+
 	$myfile = fopen($dbDir, "r") or die("Unable to access database!");
 	if(filesize($dbDir)) {
 		$file_content = fread($myfile,filesize("staff_db/staff_db.txt"));
@@ -29,8 +29,7 @@
 
 		for($x = 0; $x < sizeof($breaksecond) - 1; $x++) {
 			$compare_result = strcmp(strtolower($full_name),strtolower($breaksecond[$x]));
-			echo $breaksecond[$x] . "<br />";
-			echo $compare_result . "<br /><br />";
+			
 			if($compare_result === 0) {
 				$checkNum = 0;
 				break;
@@ -40,7 +39,7 @@
 			}
 		}
 	}
-	if($checkNum === 1) {
+	if($checkNum !== 0) {
 		dbAdd();
 	}
 	else {
