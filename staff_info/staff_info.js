@@ -7,7 +7,7 @@ var p_content = document.getElementById("staff_data");
 var i = 0;
 var staff_name = ["Brent William Buenaventura","Bruce Brian Orcullo","John Ren Veluz","Sample"];
 var staff_position = ["IT Personnel","IT Personnel","IT Head","---"];
-var staff_mobile = ["0917-532-1773","0966-724-89645","0928-716-4984","9999-999-9999"];
+var staff_mobile = ["09175321773","096672489645","09287164984","9999-999-9999"];
 var staff_email = ["buenaventura.brent@ciit.edu.ph","orcullo.bruce@ciit.edu.ph","veluz.john@ciit.edu.ph","sample@gmail.com"];
 var staff_birthday = ["Mar-02-1998","Jun-01-1998","Nov-16-1998","Dec-31-2019"];
 

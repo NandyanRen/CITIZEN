@@ -28,31 +28,43 @@
 
 
   <script type="text/javascript">
-    var file_check = <?php 
-        if(file_exists('../staff_db.txt')) {
-          echo 1;
-        }
-        else {
-          echo 0; 
-        }
-      ?>;
-
     /*     UPDATES STATUS IF STAFF_DB.TXT EXISTS     */
     function check_db() {
       var file_check = <?php 
-        if(file_exists('../staff_db.txt')) {
-          echo 1;
+        if(file_exists('staff_db')) {
+          if(file_exists('staff_db/staff_db.txt')) {
+            if(file_exists('staff_db/staff_picture')) {
+              echo 1;
+            }
+            else {
+              echo 4;
+            }
+          }
+          else {
+            echo 3;
+          }
         }
-        else {
-          echo 0;
+        else {  
+          echo 2;
         }
       ?>;
       if (file_check === 1) {
-        document.getElementById("finding_status").innerHTML = "staff_db.txt is found.";
+        document.getElementById("finding_status").innerHTML = "All files/folders found.";
         document.getElementById("finding_status").style.color = "green";
+        document.getElementById("create_status").innerHTML = "Can't create because all files/folders exists!";
+        document.getElementById("create_status").style.color = "red";
+        document.getElementById("CreateBtn").disabled = true;
       }
-      else {
-        document.getElementById("finding_status").innerHTML = "staff_db.txt is missing!";
+      else if (file_check === 2) {
+        document.getElementById("finding_status").innerHTML = "staff_db folder missing!";
+        document.getElementById("finding_status").style.color = "red";
+      }
+      else if (file_check === 3) {
+        document.getElementById("finding_status").innerHTML = "staff_db.txt missing!";
+        document.getElementById("finding_status").style.color = "red";
+      }
+      else if (file_check === 4) {
+        document.getElementById("finding_status").innerHTML = "staff_picture folder missing!";
         document.getElementById("finding_status").style.color = "red";
       }
     }
@@ -62,25 +74,18 @@
     }
 
     function dbCreate() {
-      
-      if (file_check === 1) {
-        document.getElementById("create_status").innerHTML = "Can't create because staff_db.txt exists!";
-        document.getElementById("create_status").style.color = "red";
-      }
-      else {
-        window.location.href = "dbcreator.php";
-      }
+      window.location.href = "dbcreator.php";
     }
   </script>
 
 
 
   <div id="wrapper">
-    <p>Check for file before attempting to create staff_db.txt.</p><br /><br />
-    <button onclick="misDir();">Check for staff_db</button>
+    <p>Check for file before attempting to create database.</p><br /><br />
+    <button id="checkBtn" onclick="misDir();">Check for database.</button>
     <p>Text Database status:</p>
     <p id="finding_status" name="find_button"></p><br /><br />
-    <button onclick="dbCreate();">Create staff_db</button>
+    <button id="CreateBtn" onclick="dbCreate();">Setup database</button>
     <p id="create_status" name="create_button">---</p>
   </div>
 </body>
