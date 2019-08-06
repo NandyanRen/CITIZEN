@@ -12,55 +12,63 @@
 </head>
 
 <body class="container">
-
+<?php
+        $dbDir = "staff_info_reg/staff_db/staff_db.txt";
+    $myfile = fopen($dbDir, "r") or die("Unable to access database!");
+    if(filesize($dbDir)) {
+    $file_content = fread($myfile,filesize("staff_info_reg/staff_db/staff_db.txt"));
+    }
+    else {
+      $file_content = "";
+    }
+    fclose($myfile);
+    //first level of breaking db content
+    $breakfirst = explode("-linestop-", $file_content);
+    //second level of breaking of db content
+    $breaksecond="";
+    for($i = 0; $i < count($breakfirst) - 1; $i++) {
+    $breaksecond = explode("-divider-", $breakfirst[$i]);
+      /*for($x = 0; $x < count($breaksecond) - 1; $x++) {
+       echo $breaksecond[$x];
+      }*/
+    }
+  ?>
   <header>
     <img src="../images/Citizen-logo.png" id="header-logo">
     <hr>
-  	<nav>
-  		<ul>
-  			<li><a href="../gmail_login/index.html">Home</a></li>
+    <nav>
+      <ul>
+        <li><a href="../gmail_login/index.html">Home</a></li>
         <li><a href="../index.html">Twitter</a></li>
         <li><a href="../facebook/index.html">Facebook</a></li>
         <li><a href="../gmail/readEmail.py">Gmail</a></li>
         <li><a href="index.html">Staff</a></li>
         <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
-  		</ul>
-  	</nav>
+      </ul>
+    </nav>
   </header>
-
-  <div class = "info_card">
-    <div class = "staff_header_box">
-    	<span id="staff_header">STAFF INFO</span>
-      <div class = "profile_selector_container">
-        <button id="previous_button">&laquo</button>
-        <img src="staff_picture/preset_image.png" id="staff_img">
-        <button id="next_button">&raquo</button>
-      </div>
-    </div>
-
-    <div id="staff_data">
-    	<p id="staff_name">Name</p>
-    	<br />
-      	<p id="staff_position">Position</p>
-      	<br />
-      	<p id="staff_mobile">mobile number</p>
-      	<br />
-      	<p id="staff_email">email</p>
-      	<br />
-      	<p id="staff_birthday">birthday</p>
-        <script type="text/javascript">
-          /*     Opens first entry in text database     */
-          document.getElementById("staff_img").src = "staff_picture/sp_00000.png";
-          document.getElementById("staff_name").innerHTML = staff_name[i];
-          document.getElementById("staff_position").innerHTML = staff_position[i];
-          document.getElementById("staff_mobile").innerHTML = staff_mobile[i];
-          document.getElementById("staff_email").innerHTML = staff_email[i];
-          document.getElementById("staff_birthday").innerHTML = staff_birthday[i];
-        </script>
-    </div>
+    <?php
+      for($i = 0; $i < count($breakfirst) - 1;$i++) {
+        $breaksecond = explode("-divider-", $breakfirst[$i]);
+        echo "<div class = 'info_card'>
+                <div class = 'staff_header_box'>
+                  <span id='staff_header'>STAFF INFO</span>
+                  <div class = 'profile_selector_container'>
+                    <img src='staff_info_reg/staff_db/staff_picture/" . $breaksecond[5] . "' id='staff_img'>
+                    <p class='staff_name'>" . $breaksecond[0] . "</p>
+                    <br />
+                    <p class='staff_position'>" . $breaksecond[1] . "</p>
+                    <br />
+                    <p class='staff_mobile'>" . $breaksecond[2] . "</p>
+                    <br />
+                    <p class='staff_email'>" . $breaksecond[3] . "</p>
+                    <br />
+                    <p class='staff_birthday'>" .$breaksecond[4] . "</p>
+                </div>
+              </div>";         
+      }
+    ?>
   </div>
 </body>
- 
-<script src = "staff_info.js"></script>
-
+  
 </html>
