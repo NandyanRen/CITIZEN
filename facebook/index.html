@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../masterbranch.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 
@@ -30,39 +29,17 @@
     </nav>
   </header>
 
-  
-
-  <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=443271375714375";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    jQuery(document).ready(function($) {
-      $(window).bind("load resize", function(){  
-        setTimeout(function() {
-        var container_width = $('#container').width();    
-          $('#container').html('<div class="fb-page" ' + 
-          'data-href="http://www.facebook.com/IniciativaAutoMat"' +
-          ' data-width="' + container_width + '" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="http://www.facebook.com/IniciativaAutoMat"><a href="http://www.facebook.com/IniciativaAutoMat">Auto*Mat</a></blockquote></div></div>');
-          FB.XFBML.parse( );    
-        }, 100);  
-      }); 
-    });
-    </script>
-
-    <div class="wrapper">
-      <div id="fb-root"></div>
-      
-      <div class="fb-page" data-href="http://www.facebook.com/IniciativaAutoMat" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-        <div class="fb-xfbml-parse-ignore">
-          <blockquote cite="http://www.facebook.com/IniciativaAutoMat"><a href="http://www.facebook.com/IniciativaAutoMat">Auto*Mat</a>
-          </blockquote>
-        </div>
+  <div class = "wrapper">
+    <div class = "posts">
+      <div id="fb-root">
+        <div class="fb-page" data-href="https://www.facebook.com/CIITMedia/" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/CIITMedia/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CIITMedia/">CIIT Media</a></blockquote></div>
       </div>
     </div>
+  </div>
+
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3">
+  </script>
+
 </body>
   
 </html>
