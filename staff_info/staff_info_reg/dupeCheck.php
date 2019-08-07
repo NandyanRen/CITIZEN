@@ -6,6 +6,12 @@
 <body>
 <?php
 	$dbDir = "staff_db/staff_db.txt";
+	$full_name = $_POST['full_name'];
+	$staff_position = $_POST['staff_position'];
+	$staff_mobile = $_POST['staff_mobile'];
+	$staff_email = $_POST['staff_email'];
+	$staff_birthday = $_POST['staff_birthday'];
+	$filename = $_FILES['staff_img']['name'];
 	$checkNum = '';
 
 	$myfile = fopen($dbDir, "r") or die("Unable to access database!");

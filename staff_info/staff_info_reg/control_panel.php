@@ -78,10 +78,10 @@
 
   <div id="wrapper">
     <p>Check for file before attempting to create database.</p><br /><br />
-    <button id="checkBtn" onclick="misDir();">Check for database.</button>
+    <button id="checkBtn" onclick="misDir();">CHECK DATABASE</button>
     <p>Text Database status:</p>
     <p id="finding_status" name="find_button"></p><br /><br />
-    <button id="CreateBtn" onclick="window.location.href = 'dbCreator.php';">Setup database</button>
+    <button id="CreateBtn" onclick="window.location.href = 'dbCreator.php';">SETUP DATABASE</button>
     <p id="create_status" name="create_button">---</p>
   </div>
 </body>
