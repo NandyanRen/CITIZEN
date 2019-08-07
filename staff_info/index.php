@@ -12,27 +12,6 @@
 </head>
 
 <body class="container">
-<?php
-        $dbDir = "staff_info_reg/staff_db/staff_db.txt";
-    $myfile = fopen($dbDir, "r") or die("Unable to access database!");
-    if(filesize($dbDir)) {
-    $file_content = fread($myfile,filesize("staff_info_reg/staff_db/staff_db.txt"));
-    }
-    else {
-      $file_content = "";
-    }
-    fclose($myfile);
-    //first level of breaking db content
-    $breakfirst = explode("-linestop-", $file_content);
-    //second level of breaking of db content
-    $breaksecond="";
-    for($i = 0; $i < count($breakfirst) - 1; $i++) {
-    $breaksecond = explode("-divider-", $breakfirst[$i]);
-      /*for($x = 0; $x < count($breaksecond) - 1; $x++) {
-       echo $breaksecond[$x];
-      }*/
-    }
-  ?>
   <header>
     <img src="../images/Citizen-logo.png" id="header-logo">
     <hr>
@@ -42,12 +21,43 @@
         <li><a href="../index.html">Twitter</a></li>
         <li><a href="../facebook/index.html">Facebook</a></li>
         <li><a href="../gmail/readEmail.py">Gmail</a></li>
-        <li><a href="index.html">Staff</a></li>
+        <li><a href="index.php">Staff</a></li>
         <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
       </ul>
     </nav>
   </header>
     <?php
+    $dbDir = "staff_info_reg/staff_db/staff_db.txt";
+    //checks if database files exists before attempting to pull data
+    if(file_exists('staff_info_reg/staff_db')) {
+      if(file_exists('staff_info_reg/staff_db/staff_db.txt')) {
+        if(file_exists('staff_info_reg/staff_db/staff_picture')) {
+          //pulls data if all database files exists
+          $myfile = fopen($dbDir, "r") or die("Unable to access database!");
+          if(filesize($dbDir)) {
+          $file_content = fread($myfile,filesize("staff_info_reg/staff_db/staff_db.txt"));
+          //first level of breaking db content
+          $breakfirst = explode("-linestop-", $file_content);
+          //second level of breaking of db content
+          $breaksecond="";
+          }
+          else {
+            $file_content = "";
+          }
+          fclose($myfile);
+        }
+        else {
+          echo "Database is missing some files!";
+        }
+      }
+      else {
+        echo "Database is missing some files!";
+      }
+    }
+    else {  
+      echo "Database is missing some files!";
+    }
+    //Creates Staff Info Card per staff member found
       for($i = 0; $i < count($breakfirst) - 1;$i++) {
         $breaksecond = explode("-divider-", $breakfirst[$i]);
         echo "<div class = 'info_card'>
@@ -64,11 +74,10 @@
                     <p class='staff_email'>" . $breaksecond[3] . "</p>
                     <br />
                     <p class='staff_birthday'>" .$breaksecond[4] . "</p>
+                  </div>
                 </div>
-              </div>";         
-      }
-    ?>
+              </div>";
+    }?>
   </div>
 </body>
-  
 </html>

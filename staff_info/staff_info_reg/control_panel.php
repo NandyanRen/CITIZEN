@@ -17,10 +17,10 @@
     <hr>
   	<nav>
   		<ul>
-          <li><a href="control_panel.html">Control Panel</a></li>
-    			<li><a href="staff_reg.html">Register</a></li>
-    			<li><a href="staff_update.html">Update</a></li>
-    			<li><a href="staff_delete.html">Delete</a></li>
+          <li><a href="control_panel.php">Control Panel</a></li>
+    			<li><a href="staff_reg.php">Register</a></li>
+    			<li><a href="staff_update.php">Update</a></li>
+    			<li><a href="staff_delete.php">Delete</a></li>
   		</ul>
   	</nav>
   </header>
@@ -72,10 +72,6 @@
     function misDir() {
       window.location.reload();
     }
-
-    function dbCreate() {
-      window.location.href = "dbcreator.php";
-    }
   </script>
 
 
@@ -85,7 +81,7 @@
     <button id="checkBtn" onclick="misDir();">Check for database.</button>
     <p>Text Database status:</p>
     <p id="finding_status" name="find_button"></p><br /><br />
-    <button id="CreateBtn" onclick="dbCreate();">Setup database</button>
+    <button id="CreateBtn" onclick="window.location.href = 'dbCreator.php';">Setup database</button>
     <p id="create_status" name="create_button">---</p>
   </div>
 </body>

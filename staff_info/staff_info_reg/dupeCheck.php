@@ -12,6 +12,7 @@
 	$staff_email = $_POST['staff_email'];
 	$staff_birthday = $_POST['staff_birthday'];
 	$filename = $_FILES['staff_img']['name'];
+	$checkNum = '';
 
 	$myfile = fopen($dbDir, "r") or die("Unable to access database!");
 	if(filesize($dbDir)) {
