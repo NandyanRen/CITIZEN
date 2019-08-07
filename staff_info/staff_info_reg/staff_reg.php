@@ -79,6 +79,5 @@
 
 
   </script>
-  <script src="dupeCheck.php"></script>
 </body>
 </html>
