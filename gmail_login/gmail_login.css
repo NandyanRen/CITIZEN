@@ -113,7 +113,7 @@ input, select {
 .wrapper {
 	width: 100%;
 	background: #f1f3f4;
-    display: none;
+    /*display: none;*/
 }
 
 .middle-content{
@@ -140,7 +140,7 @@ input, select {
 }
 
 header {
-    display: none;
+    /*display: none;*/
 	background-color: #1a5e7e;
 	width: 100%;
 	height: auto;
@@ -214,6 +214,7 @@ body {
   position: fixed;
   top: 45%;
   left: 33%;
+  display: none;
 }
 
 .dropbtn {
@@ -264,13 +265,14 @@ body {
 
 .signOutButton{
     display: block;
-    width: 150%;
+    width: 200%;
     height: 100%;
 }
 
-video{
+.ciitVideo iframe{
     width: 100%;
     height: auto;
+    min-height: 211px;
 }
 
 .floor-image img{
@@ -438,8 +440,10 @@ video{
 
     .g-signin2{
       position: fixed;
-      top: 45%;
+      /*top: 45%;*/
+      top: 500%;
       left: 42%;
+      display: block;
     }
 
     .dropdown-content button{
@@ -495,7 +499,7 @@ video{
     width: 150%;
     height: 100%;
     padding-right: 20%;
-    margin-top: 630%;
+    margin-top: 450%;
     }
 
     .ciitVideo{
@@ -506,6 +510,9 @@ video{
     margin-right: 6%;
     }
 
+    .ciitVideo iframe{
+        min-height: 360px;
+    }
 }
 
 /*DESKTOP VIEW*/
@@ -515,6 +522,7 @@ video{
       position: fixed;
       top: 50%;
       left: 49%;
+      display: none;
     }
 
     .middle-content{

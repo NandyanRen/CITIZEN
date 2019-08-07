@@ -17,20 +17,7 @@
 <body class="container">
 
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-  <script>
-        function onSignIn(googleUser)
-          {
-            var profile=googleUser.getBasicProfile();
-            $(".g-signin2").css("display","none");
-            $("header").css("display","block");
-            $(".wrapper").css("display","block");
-            var vid = document.getElementById("videoPlayer");
-            vid.load();
-            vid.play();
-          }
-  </script>
-
+  <script src= "login_check.js" ></script>
   <header>
     <img src="images/Citizen-logo.png" id="header-logo">
     <hr>
@@ -64,23 +51,20 @@
   <div class = "wrapper">
     <div class = "middle-content">
       <div class="ciitVideo">
-            <video width="640" height="360" id="videoPlayer" loop onclick="this.paused ? this.play() : this.pause();">
-              <source src="ciit.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+             <div id="player"></div>
           </div>
           <div class ="floor-image">
             <img class="floor-layout" width="640" height="360" src="assets/first_floor_directory.png" alt="First-Floor-Layout" id="floor-layout-image">
-            <img class="firstFloor-lobby-thumbnail" src="assets/lobby.jpg" alt="Lobby" id="lobby-image">
-            <img class="secondFloor-left_wing-thumbnail" src="assets/left_wing.jpg" alt="Left Wing" id="left_wing-image">
-            <img class="secondFloor-right_wing-thumbnail" src="assets/right_wing.jpg" alt="Right Wing" id="right_wing-image">
-            <img class="secondFloor-reception-thumbnail" src="assets/reception.jpg" alt="Reception" id="reception-image">
-            <img class="secondFloor-sc_corner-thumbnail" src="assets/sc_corner.jpg" alt="Student Council Corner" id="sc_corner-image">
-            <img class="thirdFloor-cashier-thumbnail" src="assets/cashier.jpg" alt="cashier" id="cashier-image">
-            <img class="fourthFloor-faculty-thumbnail" src="assets/faculty.jpg" alt="Faculty" id="faculty-image">
-            <img class="fifthFloor-gallery-thumbnail" src="assets/gallery.jpg" alt="Gallery" id="gallery-image">
-            <img class="sixthFloor-sixth_floor-thumbnail" src="assets/sixth_floor.jpg" alt="Sixth Floor" id="sixth_floor-image">
-            <img class="seventhFloor-gym-thumbnail" src="assets/gym.jpg" alt="Gym" id="gym-image">
+            <img class="firstFloor-lobby-thumbnail" src="assets/lobby.png" alt="Lobby" id="lobby-image">
+            <img class="secondFloor-left_wing-thumbnail" src="assets/left_wing.png" alt="Left Wing" id="left_wing-image">
+            <img class="secondFloor-right_wing-thumbnail" src="assets/right_wing.png" alt="Right Wing" id="right_wing-image">
+            <img class="secondFloor-reception-thumbnail" src="assets/reception.png" alt="Reception" id="reception-image">
+            <img class="secondFloor-sc_corner-thumbnail" src="assets/sc_corner.png" alt="Student Council Corner" id="sc_corner-image">
+            <img class="thirdFloor-cashier-thumbnail" src="assets/cashier.png" alt="cashier" id="cashier-image">
+            <img class="fourthFloor-faculty-thumbnail" src="assets/faculty.png" alt="Faculty" id="faculty-image">
+            <img class="fifthFloor-gallery-thumbnail" src="assets/gallery.png" alt="Gallery" id="gallery-image">
+            <img class="sixthFloor-sixth_floor-thumbnail" src="assets/sixth_floor.png" alt="Sixth Floor" id="sixth_floor-image">
+            <img class="seventhFloor-gym-thumbnail" src="assets/gym.png" alt="Gym" id="gym-image">
           </div>
           <div>
             <center>
@@ -108,102 +92,7 @@
     </div>
   </div>
 
-  <script>
-      
-      function signOut()
-      {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function(){
-
-          $(".g-signin2").css("display","block");
-          $(".main-container").css("display","none");
-          var vid = document.getElementById("videoPlayer");
-          vid.pause();
-        });
-      }
-
-      function showFloorImage()
-      {
-        $(".ciitVideo").css("display","none");
-        $(".floor-image").css("display","inherit");
-        var vid = document.getElementById("videoPlayer");
-        vid.pause();
-      }
-
-      function hideThumbnails()
-      {
-        $(".firstFloor-lobby-thumbnail").css("display","none");
-        $(".secondFloor-left_wing-thumbnail").css("display","none");
-        $(".secondFloor-right_wing-thumbnail").css("display","none");
-        $(".secondFloor-reception-thumbnail").css("display","none");
-        $(".secondFloor-sc_corner-thumbnail").css("display","none");
-        $(".thirdFloor-cashier-thumbnail").css("display","none");
-        $(".fourthFloor-faculty-thumbnail").css("display","none");
-        $(".fifthFloor-gallery-thumbnail").css("display","none");
-        $(".sixthFloor-sixth_floor-thumbnail").css("display","none");
-        $(".seventhFloor-gym-thumbnail").css("display","none");
-      }
-
-      function first_floor_image()
-      {
-        showFloorImage();
-        document.getElementById('floor-layout-image').src="assets/first_floor_directory.png";
-        hideThumbnails()
-        $(".firstFloor-lobby-thumbnail").css("display","block");
-      }
-
-      function second_floor_image()
-      {
-        showFloorImage();
-        document.getElementById('floor-layout-image').src="assets/second_floor_directory.png";
-        hideThumbnails()
-        $(".secondFloor-left_wing-thumbnail").css("display","block");
-        $(".secondFloor-right_wing-thumbnail").css("display","block");
-        $(".secondFloor-reception-thumbnail").css("display","block");
-        $(".secondFloor-sc_corner-thumbnail").css("display","block");
-      }
-
-      function third_floor_image()
-      {
-        showFloorImage();
-        document.getElementById('floor-layout-image').src="assets/third_floor_directory.png";
-        hideThumbnails();
-        $(".thirdFloor-cashier-thumbnail").css("display","block");
-      }
-
-      function fourth_floor_image()
-      {
-        showFloorImage();
-        document.getElementById('floor-layout-image').src="assets/fourth_floor_directory.png";
-        hideThumbnails();
-        $(".fourthFloor-faculty-thumbnail").css("display","block");
-      }
-
-      function fifth_floor_image()
-      {
-        showFloorImage();
-        document.getElementById('floor-layout-image').src="assets/fifth_floor_directory.png";
-        hideThumbnails();
-        $(".fifthFloor-gallery-thumbnail").css("display","block");
-      }
-
-      function sixth_floor_image()
-      {
-        showFloorImage();
-        document.getElementById('floor-layout-image').src="assets/sixth_floor_directory.png";
-        hideThumbnails();
-        $(".sixthFloor-sixth_floor-thumbnail").css("display","block");
-      }
-
-      function seventh_floor_image()
-      {
-        showFloorImage();
-        document.getElementById('floor-layout-image').src="assets/seventh_floor_directory.png";
-        hideThumbnails();
-        $(".seventhFloor-gym-thumbnail").css("display","block");
-      }   
-    </script>
-
+  <script src = "media.js"></script>
 </body>
 
 </html>

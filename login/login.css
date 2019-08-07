@@ -110,29 +110,6 @@ input, select {
 
 /*---------- CITIZEN CODE ----------*/
 
-img{
-    position: absolute;
-    width: 20%;
-    height: auto;
-    margin-top: 16%;
-    margin-left: 42%;
-}
-
-.white-box{
-    position: absolute;
-    width: 35%;
-    height: 25%;
-    margin-left: 34.5%;
-    margin-top: 19.5%;
-    background: #FFF;
-}
-
-.g-signin2{
-    position: absolute;
-    margin-left: 41%;
-    margin-top: 16%;
-}
-
 
 /*MOBILE VIEW*/
 
@@ -199,6 +176,27 @@ header nav ul li button{
     text-align: left;
 }
 
+    img{
+        width: 70%;
+        height: auto;
+        margin-top: 60%;  
+    }
+
+    .white-box{
+        position: absolute;
+        width: 90%;
+        height: 20%;
+        margin-left: 5%;
+        margin-top: -3%;
+        background: #FFF;
+    }
+
+    .g-signin2{
+        position: absolute;
+        margin-left: 31%;
+        margin-top: 13%;
+    }
+
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
 
@@ -227,9 +225,66 @@ header nav ul li button{
 		font-weight: 400;
 	}
 
+    img{
+    position: absolute;
+    width: 40%;
+    margin-top: 36%;
+    margin-left: 23%;
+    }
+
+    .white-box{
+        width: 49%;
+        height: 20%;
+        margin-left: 27.5%;
+        margin-top: 42.5%;
+        background: #FFF;
+    }
+
+    .g-signin2{
+        position: absolute;
+        margin-left: 37%;
+        margin-top: 16%;
+    }
+
 }
 
 /*DESKTOP VIEW*/
 @media only screen and (min-width:1280px){
-    
+    img{
+        width: 20%;
+        margin-top: 16%;
+        margin-left: 37.5%;
+    }
+
+    .white-box{
+        width: 31%;
+        height: 25%;
+        margin-left: 36.5%;
+        margin-top: 19.5%;
+    }
+
+    .g-signin2{
+        margin-left: 39%;
+        margin-top: 16%;
+    }
+}
+
+@media only screen and (max-height:768px) and (max-height: 500px){
+    img{
+        width: 30%;
+        margin-top: 14.5%;
+        margin-left: 28.5%;
+    }
+
+    .white-box{
+        width: 41%;
+        height: 30%;
+        margin-left: 31.5%;
+        margin-top: 19.5%;
+    }
+
+    .g-signin2{
+        margin-left: 35%;
+        margin-top: 12%;
+    }
 }
