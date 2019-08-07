@@ -17,10 +17,10 @@
     <hr>
     <nav>
       <ul>
-        <li><a href="control_panel.html">Control Panel</a></li>
-        <li><a href="staff_reg.html">Register</a></li>
-        <li><a href="staff_update.html">Update</a></li>
-        <li><a href="staff_delete.html">Delete</a></li>
+        <li><a href="control_panel.php">Control Panel</a></li>
+        <li><a href="staff_reg.php">Register</a></li>
+        <li><a href="staff_update.php">Update</a></li>
+        <li><a href="staff_delete.php">Delete</a></li>
       </ul>
     </nav>
   </header>

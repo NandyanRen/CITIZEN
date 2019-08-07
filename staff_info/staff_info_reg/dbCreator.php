@@ -16,7 +16,7 @@
 		mkdir("staff_db/staff_picture");
 	?>
 <script type="text/javascript">
-	 window.location.href = "control_panel.html";
+	 window.location.href = "control_panel.php";
 </script>
 </body>
 </html>
