@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <title>CITIZEN</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="gmail_login.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <meta name="google-signin-client_id" content="50193247923-fbgiuu1l1olpvfd6rhujocp0rltra2u8.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body class="container">
+
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <script src= "login_check.js" ></script>
+  <header>
+    <img src="images/Citizen-logo.png" id="header-logo">
+    <hr>
+  	<nav>
+  		<ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="staff_info/index.php">Staff</a></li>
+  			<li><a href="twitter/index.html">Twitter</a></li>
+  			<li><a href="facebook/index.html">Facebook</a></li>
+  			<li><a href="gmail/readEmail.py">Gmail</a></li>
+        <li><a href="calendar_event/index.html">Create Event</a></li>
+        <li>
+          <div class="floor-menu-dropdown">
+            <button class="dropbtn" id="first_floor_image">Floors</button>
+            <div class="dropdown-content">
+              <button onclick="first_floor_image()">First Floor</button>
+              <button onclick="second_floor_image()">Second Floor</button>
+              <button onclick="third_floor_image()">Third Floor</button>
+              <button onclick="fourth_floor_image()">Fourth Floor</button>
+              <button onclick="fifth_floor_image()">Fifth Floor</button>
+              <button onclick="sixth_floor_image()">Sixth Floor</button>
+              <button onclick="seventh_floor_image()">Seventh Floor</button>
+            </div>
+          </div>
+        </li>
+        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
+  		</ul>
+  	</nav>
+  </header>
+
+  <div class = "wrapper">
+    <div class = "middle-content">
+      <div class="ciitVideo">
+             <div id="player"></div>
+          </div>
+          <div class ="floor-image">
+            <img class="floor-layout" width="640" height="360" src="images/first_floor_directory.png" alt="First-Floor-Layout" id="floor-layout-image">
+            <img class="firstFloor-lobby-thumbnail" src="images/lobby.png" alt="Lobby" id="lobby-image">
+            <img class="secondFloor-left_wing-thumbnail" src="images/left_wing.png" alt="Left Wing" id="left_wing-image">
+            <img class="secondFloor-right_wing-thumbnail" src="images/right_wing.png" alt="Right Wing" id="right_wing-image">
+            <img class="secondFloor-reception-thumbnail" src="images/reception.png" alt="Reception" id="reception-image">
+            <img class="secondFloor-sc_corner-thumbnail" src="images/sc_corner.png" alt="Student Council Corner" id="sc_corner-image">
+            <img class="thirdFloor-cashier-thumbnail" src="images/cashier.png" alt="cashier" id="cashier-image">
+            <img class="fourthFloor-faculty-thumbnail" src="images/faculty.png" alt="Faculty" id="faculty-image">
+            <img class="fifthFloor-gallery-thumbnail" src="images/gallery.png" alt="Gallery" id="gallery-image">
+            <img class="sixthFloor-sixth_floor-thumbnail" src="images/sixth_floor.png" alt="Sixth Floor" id="sixth_floor-image">
+            <img class="seventhFloor-gym-thumbnail" src="images/gym.png" alt="Gym" id="gym-image">
+          </div>
+          <div>
+            <center>
+              <p class="core-values-container">
+                MISSION & VISION
+                <br><br>
+                We are proud to declare the multimedia arts school mission, vision, and goals that we currently fulfill.
+                <br>
+                <br>
+                Vision
+                <br><br>
+                Leading the way towards a globally competitive Philippines.
+                <br>
+                <br>
+                Mission
+                <br><br>
+                We commit to improve Filipino lives by empowering the youth through industry-ready, values-driven and accessible education.
+              </p>
+            </center>
+          </div>
+          <div class="calendar-view" id="calendar-container">
+            <iframe id="calendar-frame" src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%231a5e7e&amp;ctz=Asia%2FManila&amp;src=Y2lpdC5lZHUucGhfbzJhMjlxNTJob2Y4dTc5dm1jZGNzYm1uazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%237CB342&amp;color=%237986CB&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0" style="border-width:0" width="640" height="360" frameborder="0" scrolling="no">
+            </iframe>
+          </div>
+    </div>
+  </div>
+
+  <script src = "media.js"></script>
+</body>
+
+</html>

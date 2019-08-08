@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Home</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="masterbranch.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+<body class = "container">
+
+  <script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }
+
+  (document, "script", "twitter-wjs"));
+
+  </script>
+
+  <header>
+    <img src="images/Citizen-logo.png" id="header-logo">
+    <hr>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Twitter</a></li>
+        <li><a href="../facebook/index.html">Facebook</a></li>
+        <li><a href="../gmail/readEmail.py">Gmail</a></li>
+        <li><a href="../staff_info/index.php">Staff</a></li>
+        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class = "wrapper">
+    <div class = "posts">
+      <a class="twitter-timeline"
+        href="https://twitter.com/ciitph"
+        data-chrome="nofooter noheader noborders">
+      </a>
+    </div>
+  </div>
+
+</body>
+ 
+<script src = "masterbranch.js"></script>
+
+</html>
