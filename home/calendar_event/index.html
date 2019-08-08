@@ -10,9 +10,14 @@
   <meta charset="utf-8" />
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta name="google-signin-client_id" content="50193247923-fbgiuu1l1olpvfd6rhujocp0rltra2u8.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body class="container">
+
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <script src= "../twitter/login_check.js" ></script>
 
   <header>
     <img src="images/Citizen-logo.png" id="header-logo">

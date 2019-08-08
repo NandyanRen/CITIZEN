@@ -238,6 +238,14 @@ body {
     text-align: left;
 }
 
+.g-signin2{
+      position: fixed;
+      /*top: 45%;*/
+      top: 500%;
+      left: 42%;
+      display: none;
+}
+
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
 
