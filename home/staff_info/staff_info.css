@@ -326,6 +326,15 @@ header button .signOutPicture {
     color: #1a5e7e;
 }
 
+.g-signin2{
+      position: fixed;
+      /*top: 45%;*/
+      top: 500%;
+      left: 42%;
+      display: none;
+}
+
+/*TABLET VIEW*/
 /*TABLET AND DESKTOP VIEW*/
 @media only screen and (min-width:768px){
 

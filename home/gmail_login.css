@@ -212,8 +212,8 @@ body {
 
 .g-signin2{
   position: fixed;
-  top: 45%;
-  left: 33%;
+  top: 500%;
+  left: 42%;
   display: none;
 }
 
@@ -438,14 +438,6 @@ body {
     	box-shadow: 10px 0px 10px #081f2f inset;
     }
 
-    .g-signin2{
-      position: fixed;
-      /*top: 45%;*/
-      top: 500%;
-      left: 42%;
-      display: block;
-    }
-
     .dropdown-content button{
       background: transparent;
     }
@@ -517,13 +509,6 @@ body {
 
 /*DESKTOP VIEW*/
 @media only screen and (min-width:1280px){
-
-    .g-signin2{
-      position: fixed;
-      top: 50%;
-      left: 49%;
-      display: none;
-    }
 
     .middle-content{
         background: #f1f3f4;

@@ -27,7 +27,14 @@ time, mark, audio, video {
     background:transparent;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
+    height: 100%;
+    width: 100%;
     line-height:1;
 }
 
@@ -111,19 +118,10 @@ input, select {
 }
 
 .wrapper {
-	width: 100%;
+    margin: auto;
+	width: 80%;
 	background: #f1f3f4;
 }
-
-.middle-content{
-    max-width: 845px;
-    background: #f1f3f4;
-      color: #00364e;
-      margin: 0 auto;
-      padding-left: 2%;
-      padding-bottom: 2%;
-}
-
 
 #header-logo {
 	width: 35%;
@@ -196,47 +194,41 @@ header nav ul li button:hover{
     color: #48c8f5;
 }
 
-body {
+html body {
   background-color: #0e394b;
   width: 100%;
   height: 100%;
   font-family: 'Poppins', sans-serif;
 }
 
-.create-event{
-    margin-top: 2%;
+iframe {
+        width: 100%;
+        border: 0;
+        min-height: 80%;
+        height: 600px;
+        display: flex;
 }
 
-.calendar-view{
-    position: relative;
-    height: 450px;
-    margin-right: 2%;
+.wrapper h1 {
+    text-align: center;
+    font-size: 6vw;
+    font-weight: 500;
+    }
+/*
+.left{
+    flex: 8%;
+    background-color: #1a5e7e;
+    width: 10%;
+    height: auto;
+    box-shadow: 10px 0px 10px #081f2f inset;
 }
 
-.calendar-view iframe {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.right {
+    flex: 80%;
+    width: 90%;
+    background: #f1f3f4;
 }
-
-.calendar-event-text{
-    font-size: 4vw;
-    font-weight: bold;
-}
-
-.create-event-button{
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 2.5vw;
-    color: #00364e;
-
-    background-color: transparent;
-    border: transparent;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    text-align: left;
-}
+*/
 
 .g-signin2{
       position: fixed;
@@ -245,9 +237,19 @@ body {
       left: 42%;
       display: none;
 }
-
 /*TABLET VIEW*/
-@media only screen and (min-width:768px){
+
+@media only screen and (min-width: 768px){
+
+    .wrapper h1 {
+    font-size: 32px;
+    }
+
+    .wrapper h1, th {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    }
 
 	#header-logo{
         width: 70%;
@@ -255,7 +257,7 @@ body {
         padding: 15px 0 15px 15px;
         margin: 0;
     }
-
+    
     .container{
         display: grid;
         grid-template-columns: 160px auto;
@@ -265,14 +267,21 @@ body {
         grid-column: 2 / span 1;
         width: 100%;
         height: 100%;
-    	background-color: #0e394b;
-    	box-shadow: 10px 0px 10px #081f2f inset;
+        background-color: #0e394b;
+    }
+
+    .wrapper .with-bootstrap{
+        width: 100%;
+        height: auto;
     }
 
     header{
+        float: left;
         grid-column: 1 / span 1;
-        width: 100%;
+        width: 160px;
         height: 100%;
+        margin-left: -56%;
+        box-shadow: 10px 0px 10px #081f2f;
     }
 
     header hr{
@@ -289,50 +298,17 @@ body {
 		font-weight: 400;
 	}
 
-    header nav ul li button{
-        font-size: 20px;
-        font-weight: 400;
-    }
-
-    header nav ul li button:hover{
-        font-size: 20px;
-        font-weight: 400;
-    }
-
-    .calendar-event-text{
-        font-size: 3vw;
-    }
-
-    .create-event-button{
-        font-size: 2vw;
-    }
-
     .signOutButton{
-        display: block;
-        width: 150%;
-        height: 100%;
-        padding-right: 20%;
-        margin-top: 540%;
+    display: block;
+    width: 150%;
+    height: 100%;
+    padding-right: 20%;
+    font-size: 20px;
     }
 
-    html, body{
-        overflow: hidden;
-    }
-}
+    .signOutButton:hover{
+    font-size: 20px;
+    }*/
 
-/*DESKTOP VIEW*/
-@media only screen and (min-width:1280px){
-    .calendar-event-text{
-        font-size: 1.5vw;
-    }
-
-    .create-event-button{
-        font-size: 1vw;
-    }
-
-    .calendar-view{
-    position: relative;
-    height: 600px;
-    margin-right: 4%;
-    }    
+    
 }
