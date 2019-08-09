@@ -111,73 +111,138 @@ input, select {
 /*---------- CITIZEN CODE ----------*/
 /*MOBILE VIEW*/
 
-#header-logo {
-	width: 35%;
-	height: auto;
-	padding: 20px 0 20px 0;
-	display: block;
-	margin: 0 auto;
+.container {
+    background-color: #0e394b;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
-.signOutButton{
-        display: block;
-        width: 150%;
-        height: 100%;
-        padding-right: 20%;
-        margin-top: 610%;
-        font-size: 20px;
-    }
-
-.signOutButton:hover{
-    font-size: 20px;
-}
-    
 header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 	background-color: #1a5e7e;
 	width: 100%;
 	height: auto;
 }
 
-header hr{
-    padding: 0;
-    margin: 0;
-    color: #fff;
+/*Menu CSS*/
+header nav {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 20px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-header nav {
-	display: flex;
-	justify-content: space-between;
+header nav input {
+    display: flex;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+header nav span {
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+
+header nav span:first-child {
+    transform-origin: 0% 0%;
+}
+
+header nav span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+header nav input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    background: #1a5e7e;
+}
+
+header nav input:checked ~ span:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header nav input:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
 }
 
 header nav ul {
-	display: block;
-	margin: 0 auto;
+    position: absolute;
+    width: 60px;
+    height: 600px;
+    box-shadow: 0 0 10px #000;
+    background-color: #ddd;
+    margin: -50px 0 0 -50px;
+    padding: 50px;
+    padding-top: 90px;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
 header nav ul li{
-	display: inline-block;
-	list-style: none;
-	float: left;
-	padding: 10px 30px 10px 30px;
+    width: 100%;
+    padding: 10px 0;
+	transition-delay: 2s;
+}
+
+header nav input:checked ~ ul{
+    transform:none;
 }
 
 header nav ul li a:link,a:visited,a:active{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
-	font-size: 3vw;
-	color: #ffffff;
+	font-size: 5vw;
+	color: #1a5e7e;
     text-decoration: none;
 }
 
 header nav ul li a:hover{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
-	font-size: 3vw;
+	font-size: 5vw;
+    background-color: #eee;
+    box-shadow: 0 0 8px 8px #eee;
 	color: #48c8f5;
     text-decoration: none;
 }
 
-header nav ul li button{
+header #header-logo {
+    width: 35%;
+    height: auto;
+    padding: 20px 0 20px 0;
+}
+
+header button.signOutButton{
+    width: 30px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 3vw;
@@ -185,24 +250,17 @@ header nav ul li button{
 
     background-color: transparent;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
     outline:none;
     text-align: left;
 }
 
-header nav ul li button:hover{
+header button.signOutButton:hover{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 3vw;
     color: #48c8f5;
-}
-
-body {
-  background-color: #0e394b;
-  width: 100%;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
 }
 
 /*Staff Info Card*/
@@ -245,26 +303,6 @@ body {
     border-radius: 100%;
 }
 
-#previous_button {
-    opacity: 0;
-}
-
-#next_button, #previous_button {
-    background-color: #1a5e7e;
-    border:none;
-    border-radius: 100%;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    height: auto;
-    width: auto;
-}
-
-#next_button:hover, #previous_button:hover {
-    color: #48c8f5;
-    font-size: 35px;
-}
-
 #staff_data {
     width: 100%;
     display: inline-block;
@@ -296,13 +334,6 @@ body {
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
 
-	#header-logo{
-        width: 70%;
-        height: auto;
-        padding: 15px 0 15px 15px;
-        margin: 0;
-    }
-
     .container{
         display: grid;
         grid-template-columns: 160px auto;
@@ -312,6 +343,13 @@ body {
         grid-column: 1 / span 1;
         width: 100%;
         height: 100%;
+    }
+
+    header #header-logo{
+        width: 70%;
+        height: auto;
+        padding: 15px 0 15px 15px;
+        margin: 0;
     }
 
     header hr{

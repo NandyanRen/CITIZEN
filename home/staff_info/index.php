@@ -13,19 +13,26 @@
 
 <body class="container">
   <header>
-    <img src="../images/Citizen-logo.png" id="header-logo">
-    <hr>
-    <nav>
+    <nav role="navigation">
+      <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="../twitter/index.html">Twitter</a></li>
         <li><a href="../facebook/index.html">Facebook</a></li>
         <li><a href="../gmail/readEmail.py">Gmail</a></li>
         <li><a href="index.php">Staff</a></li>
-        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
       </ul>
     </nav>
+
+    <img src="../images/Citizen-logo.png" id="header-logo">
+
+    <button onclick="signOut()" class="signOutButton">Sign Out</button>
   </header>
+
+  <div class="wrapper">
     <?php
     $dbDir = "staff_info_reg/staff_db/staff_db.txt";
     //checks if database files exists before attempting to pull data
