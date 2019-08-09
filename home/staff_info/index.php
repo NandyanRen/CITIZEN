@@ -85,5 +85,7 @@
               </div>";
     }?>
   </div>
+
+  <script src= "../twitter/signout.js" ></script>
 </body>
 </html>
