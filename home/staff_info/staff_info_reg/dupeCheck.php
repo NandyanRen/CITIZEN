@@ -30,17 +30,19 @@
 
 		for($x = 0; $x < sizeof($breaksecond) - 1; $x++) {
 			$compare_result = strcmp(strtolower($full_name),strtolower($breaksecond[$x]));
-			
 			if($compare_result === 0) {
-				$checkNum = 0;
+				$checkNum = "exist";
 				break;
 			}
 			else {
-				$checkNum = 1;
+				$checkNum = "noexist";
 			}
 		}
+		if($checkNum === "exist") {
+			break;
+		}
 	}
-	if($checkNum !== 0) {
+	if($checkNum === "noexist") {
 		dbAdd();
 	}
 	else {

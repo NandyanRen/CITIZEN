@@ -19,19 +19,34 @@
   <script src= "../twitter/login_check.js" ></script>
 
   <header>
-    <img src="../images/Citizen-logo.png" id="header-logo">
-    <hr>
-    <nav>
-      <ul>
+    <nav role="navigation">
+      <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      <ul id="mobile-panel">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../twitter/index.html">Twitter</a></li>
         <li><a href="../facebook/index.html">Facebook</a></li>
         <li><a href="../gmail/readEmail.py">Gmail</a></li>
         <li><a href="index.php">Staff</a></li>
-        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
       </ul>
     </nav>
+
+    <img src="../images/Citizen-logo.png" id="header-logo">
+
+    <ul id="desktop-panel">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../twitter/index.html">Twitter</a></li>
+        <li><a href="../facebook/index.html">Facebook</a></li>
+        <li><a href="../gmail/readEmail.py">Gmail</a></li>
+        <li><a href="index.php">Staff</a></li>
+    </ul>
+
+    <button onclick="signOut()" class="signOutButton"><img src="../images/signOutButton.png" class="signOutPicture"></button>
   </header>
+
+  <div class="content-wrapper">
     <?php
     $dbDir = "staff_info_reg/staff_db/staff_db.txt";
     //checks if database files exists before attempting to pull data
@@ -67,20 +82,15 @@
       for($i = 0; $i < count($breakfirst) - 1;$i++) {
         $breaksecond = explode("-divider-", $breakfirst[$i]);
         echo "<div class = 'info_card'>
-                <div class = 'staff_header_box'>
-                  <span id='staff_header'>STAFF INFO</span>
-                  <div class = 'profile_selector_container'>
-                    <img src='staff_info_reg/staff_db/staff_picture/" . $breaksecond[5] . "' id='staff_img'>
-                    <p class='staff_name'>" . $breaksecond[0] . "</p>
-                    <br />
-                    <p class='staff_position'>" . $breaksecond[1] . "</p>
-                    <br />
-                    <p class='staff_mobile'>" . $breaksecond[2] . "</p>
-                    <br />
-                    <p class='staff_email'>" . $breaksecond[3] . "</p>
-                    <br />
-                    <p class='staff_birthday'>" .$breaksecond[4] . "</p>
-                  </div>
+                <div class = 'profile_img_container'>
+                  <img src='staff_info_reg/staff_db/staff_picture/" . $breaksecond[5] . "' id='staff_img'>
+                </div>
+                <div class='staff data'>
+                  <p class='staff_name'>" . $breaksecond[0] . "</p>
+                  <p class='staff_position'>" . $breaksecond[1] . "</p>
+                  <p class='staff_mobile'>" . $breaksecond[2] . "</p>
+                  <p class='staff_email'>" . $breaksecond[3] . "</p>
+                  <p class='staff_birthday'>" .$breaksecond[4] . "</p>
                 </div>
               </div>";
     }?>
