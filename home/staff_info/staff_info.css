@@ -121,7 +121,7 @@ input, select {
 header {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 	background-color: #1a5e7e;
 	width: 100%;
@@ -133,7 +133,6 @@ header nav {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 20px;
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
@@ -189,10 +188,10 @@ header nav input:checked ~ span:nth-last-child(2){
     transform: rotate(-45deg) translate(0, -1px);
 }
 
-header nav ul {
+#mobile-panel {
     position: absolute;
-    width: 60px;
-    height: 600px;
+    width: 70px;
+    height: 900px;
     box-shadow: 0 0 10px #000;
     background-color: #ddd;
     margin: -50px 0 0 -50px;
@@ -210,14 +209,14 @@ header nav ul li{
 	transition-delay: 2s;
 }
 
-header nav input:checked ~ ul{
+header nav input:checked ~ #mobile-panel{
     transform:none;
 }
 
 header nav ul li a:link,a:visited,a:active{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
-	font-size: 5vw;
+	font-size: 20px;
 	color: #1a5e7e;
     text-decoration: none;
 }
@@ -225,7 +224,7 @@ header nav ul li a:link,a:visited,a:active{
 header nav ul li a:hover{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
-	font-size: 5vw;
+	font-size: 20px;
     background-color: #eee;
     box-shadow: 0 0 8px 8px #eee;
 	color: #48c8f5;
@@ -238,15 +237,14 @@ header #header-logo {
     padding: 20px 0 20px 0;
 }
 
-header button.signOutButton{
-    width: 30px;
-    height: 100%;
+#desktop-panel{
+    display: none;
+}
+
+header .signOutButton{
+    width: 20px;
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 3vw;
-    color: #ffffff;
 
     background-color: transparent;
     border: none;
@@ -256,82 +254,79 @@ header button.signOutButton{
     text-align: left;
 }
 
-header button.signOutButton:hover{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 3vw;
-    color: #48c8f5;
+header button .signOutPicture {
+    width: 17px;
+    height: auto;
+}
+
+.content-wrapper{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 /*Staff Info Card*/
 .info_card {
+    display: grid;
+    grid-template-rows: 170px auto;
+    justify-items: center;
+    align-items: center;
+
     height: 400px;
     width: 300px;
-    margin: 20px auto;
-    background-color: #c7d6de;
+    padding: 0;
+    margin: 10px;
+    background-color: #ddd;
 }
 
-.staff_header_box {
-    align-items: center;
-    background-color: #1a5e7e;
-    display: grid;
-    grid-template-rows: 50px auto;
-    justify-content: center;
+.profile_img_container {
+    grid-row: 1 / span 1;
+    height: 100%;
     width: 100%;
-}
+    background-color: #1a5e7e;
 
-#staff_header {
-    color: #fff;
-    font-weight: 700;
-    font-size: 20px;
-    grid-column: 1 / span 1;
-    margin: 0 auto;
-    padding: 15px 0 10px;
-}
-
-#profile_selector_container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
     align-content: center;
+    align-items: center;
 }
 
 #staff_img {
-    width: 100px;
     height: 100px;
-    color: #fff;
+    width: 100px;
     border-radius: 100%;
 }
 
-#staff_data {
+.staff_data {
+    grid-row: 2 / span 1;
     width: 100%;
-    display: inline-block;
-    text-align: center;
-    margin-top: 5px;
 }
 
-#staff_name {
-    padding-top: 20px;
+.staff_name {
     color: #0e394b;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
-#staff_position {
-    font-size: 15px;
+.staff_position {
+    font-size: 13px;
     font-style: italic;
+    color: #222;
 }
 
-#staff_mobile, #staff_email, #staff_birthday, #staff_name {
-    font-weight: 900;
+.staff_mobile, .staff_email, .staff_birthday, .staff_name, .staff_position {
+    font-weight: 400;
+    text-align: center;
+    padding: 5px 0 5px 0;
 }
 
-#staff_mobile, #staff_email, #staff_birthday {
+.staff_mobile, .staff_email, .staff_birthday {
     font-size: 15px;
     color: #1a5e7e;
 }
 
-/*TABLET VIEW*/
+/*TABLET AND DESKTOP VIEW*/
 @media only screen and (min-width:768px){
 
     .container{
@@ -343,32 +338,80 @@ header button.signOutButton:hover{
         grid-column: 1 / span 1;
         width: 100%;
         height: 100%;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-content: space-around;
     }
 
     header #header-logo{
         width: 70%;
         height: auto;
-        padding: 15px 0 15px 15px;
+        padding: 25px 0;
         margin: 0;
     }
 
-    header hr{
-        padding-bottom: 15px;
+    #mobile-panel{
+        display: none;
     }
 
-    header nav ul li{
-    	padding-bottom: 20px;
-        display: block;
+    header nav span{
+        display: none;
     }
 
-	header nav ul li a:link,a:visited,a:active,a:hover{
+    header #desktop-panel{
+        padding: 0;
+        margin: 30px;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-content: space-around;
+    }
+
+    header ul li{
+    	padding-bottom: 35px;
+        width: 100%;
+        list-style-type: none;
+    }
+
+	header ul li a:link,a:visited,a:active,a:hover{
+        text-decoration: none;
 		font-size: 20px;
 		font-weight: 400;
 	}
 
-}
+    header ul li a:link,a:visited,a:active{
+        color: #fff;
+    }
 
-/*DESKTOP VIEW*/
-@media only screen and (min-width:1280px){
-    
+    header ul li a:hover{
+        color: #48c8f5;
+    }
+
+    .signOutButton{
+        padding: 25px;
+        width: 50px;
+        overflow: visible;
+    }
+
+    #desktop-panel:after{
+        content: "Sign Out";
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        padding-top: 200px;
+    }
+
+    .content-wrapper{
+        grid-column: 2 / span 1;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+    }
 }
