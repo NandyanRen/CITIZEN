@@ -9,9 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="facebook.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <meta name="google-signin-client_id" content="50193247923-fbgiuu1l1olpvfd6rhujocp0rltra2u8.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </head>
 
 <body class="container">
+
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <script src= "../twitter/login_check.js" ></script>
+
   <header>
     <nav role="navigation">
       <input type="checkbox" />
@@ -56,6 +63,8 @@
 
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3">
   </script>
+
+  <script src= "../twitter/signout.js" ></script>
 
 </body>
   

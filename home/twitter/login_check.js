@@ -7,7 +7,7 @@ function checkSession(){
 	if(sessionStorage.getItem("email") != null){
 	}
 	else {
-    	window.location.href='../index.html';
+    	window.location.href='../../index.html';
     }
 }
 
