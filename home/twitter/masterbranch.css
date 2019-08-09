@@ -266,6 +266,10 @@ header button .signOutPicture {
     justify-content: center;
 }
 
+.posts{
+    width: 100%;
+}
+
 /*TABLET AND DESKTOP VIEW*/
 @media only screen and (min-width:768px){
 
