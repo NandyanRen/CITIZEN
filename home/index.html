@@ -18,20 +18,23 @@
 
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <script src= "login_check.js" ></script>
+
   <header>
-    <img src="images/Citizen-logo.png" id="header-logo">
-    <hr>
-  	<nav>
-  		<ul>
+    <nav role="navigation">
+      <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      <ul id="mobile-panel">
         <li><a href="index.html">Home</a></li>
-        <li><a href="staff_info/index.php">Staff</a></li>
   			<li><a href="twitter/index.html">Twitter</a></li>
   			<li><a href="facebook/index.html">Facebook</a></li>
-  			<li><a href="gmail/readEmail.py">Gmail</a></li>
+  			<li><a href="gmail/index.html">Gmail</a></li>
+        <li><a href="staff_info/index.php">Staff</a></li>
         <li><a href="calendar_event/index.html">Create Event</a></li>
         <li>
           <div class="floor-menu-dropdown">
-            <button class="dropbtn" id="first_floor_image">Floors</button>
+            <button class="dropbtn" id="first_floor_image"><span class="mobileFloor">Floors</span></button>
             <div class="dropdown-content">
               <button onclick="first_floor_image()">First Floor</button>
               <button onclick="second_floor_image()">Second Floor</button>
@@ -43,12 +46,37 @@
             </div>
           </div>
         </li>
-        <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
   		</ul>
   	</nav>
+
+    <img src="../images/Citizen-logo.png" id="header-logo">
+
+    <ul id="desktop-panel">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="twitter/index.html">Twitter</a></li>
+        <li><a href="facebook/index.html">Facebook</a></li>
+        <li><a href="gmail/index.html">Gmail</a></li>
+        <li><a href="staff_info/index.php">Staff</a></li>
+        <li><a href="calendar_event/index.html">Create Event</a></li>
+        <li>
+          <div class="floor-menu-dropdown">
+            <button class="dropbtn" id="first_floor_image"><span class="desktopFloor">Floors</span></button>
+            <div class="dropdown-content">
+              <button onclick="first_floor_image()">First Floor</button>
+              <button onclick="second_floor_image()">Second Floor</button>
+              <button onclick="third_floor_image()">Third Floor</button>
+              <button onclick="fourth_floor_image()">Fourth Floor</button>
+              <button onclick="fifth_floor_image()">Fifth Floor</button>
+              <button onclick="sixth_floor_image()">Sixth Floor</button>
+              <button onclick="seventh_floor_image()">Seventh Floor</button>
+            </div>
+          </div>
+        </li>
+    </ul>
+    <button onclick="signOut()" class="signOutButton"><img src="../images/signOutButton.png" class="signOutPicture"></button>
   </header>
 
-  <div class = "wrapper">
+  <div class = "content-wrapper">
     <div class = "middle-content">
       <div class="ciitVideo">
              <div id="player"></div>

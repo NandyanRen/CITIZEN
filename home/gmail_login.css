@@ -104,16 +104,175 @@ input, select {
 /*---------- CITIZEN CODE ----------*/
 /*MOBILE VIEW*/
 
-*{
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
+.container {
+    background-color: #0e394b;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
-.wrapper {
-	width: 100%;
-	background: #f1f3f4;
-    /*display: none;*/
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1a5e7e;
+    width: 100%;
+    height: auto;
+}
+
+/*Menu CSS*/
+header nav {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 30;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+header nav input {
+    display: flex;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 31;
+}
+
+header nav span {
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+
+header nav span:first-child {
+    transform-origin: 0% 0%;
+}
+
+header nav span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+header nav input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    background: #1a5e7e;
+}
+
+header nav input:checked ~ span:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header nav input:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#mobile-panel {
+    position: absolute;
+    width: 70px;
+    height: 900px;
+    box-shadow: 0 0 10px #000;
+    background-color: #ddd;
+    margin: -50px 0 0 -50px;
+    padding: 50px;
+    padding-top: 90px;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+header nav ul li{
+    width: 100%;
+    padding: 10px 0;
+    transition-delay: 2s;
+}
+
+/*.floor{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #1a5e7e;
+}
+
+.floor:hover{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #eee;
+    box-shadow: 0 0 8px 8px #eee;
+    color: #48c8f5;
+}*/
+
+header nav input:checked ~ #mobile-panel{
+    transform:none;
+}
+
+header nav ul li a:link,a:visited,a:active{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #1a5e7e;
+    text-decoration: none;
+}
+
+header nav ul li a:hover{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #eee;
+    box-shadow: 0 0 8px 8px #eee;
+    color: #48c8f5;
+    text-decoration: none;
+}
+
+header #header-logo {
+    width: 35%;
+    height: auto;
+    padding: 20px 0 20px 0;
+}
+
+#desktop-panel{
+    display: none;
+}
+
+header .signOutButton{
+    width: 20px;
+    padding: 0;
+    margin: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline:none;
+    text-align: left;
+}
+
+header button .signOutPicture {
+    width: 17px;
+    height: auto;
+}
+
+.content-wrapper{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .middle-content{
@@ -131,85 +290,6 @@ input, select {
     padding-right: 7%;
 }
 
-#header-logo {
-	width: 35%;
-	height: auto;
-	padding: 20px 0 20px 0;
-	display: block;
-	margin: 0 auto;
-}
-
-header {
-    /*display: none;*/
-	background-color: #1a5e7e;
-	width: 100%;
-	height: auto;
-}
-
-header hr{
-    padding: 0;
-    margin: 0;
-}
-
-header nav {
-	display: flex;
-	justify-content: space-between;
-}
-
-header nav ul {
-	display: block;
-	margin: 0 auto;
-}
-
-header nav ul li{
-	display: inline-block;
-	list-style: none;
-	float: left;
-	padding: 10px 30px 10px 30px;
-}
-
-header nav ul li a:link,a:visited,a:active{
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	font-size: 3vw;
-	color: #ffffff;
-}
-
-header nav ul li a:hover{
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	font-size: 3vw;
-	color: #48c8f5;
-}
-
-header nav ul li button{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 3vw;
-    color: #ffffff;
-
-    background-color: transparent;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    text-align: left;
-}
-
-header nav ul li button:hover{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 3vw;
-    color: #48c8f5;
-}
-
-body {
-  background-color: #0e394b;
-  width: 100%;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-}
-
 .g-signin2{
   position: fixed;
   top: 500%;
@@ -218,14 +298,15 @@ body {
 }
 
 .dropbtn {
-  width: 100%;
-  height: 100%;
+  width: 90px;
+  height: 40px;
   background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    padding: 0;
 }
 
 .floor-menu-dropdown {
@@ -415,27 +496,101 @@ body {
     padding-right: 0%;
 }
 
+.mobileFloor{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #1a5e7e;
+    background: none;
+    text-decoration: none; 
+}
+
 /*TABLET VIEW*/
 @media only screen and (min-width:768px){
-
-	#header-logo{
-        width: 70%;
-        height: auto;
-        padding: 15px 0 15px 15px;
-        margin: 0;
-    }
-
-    .container{
+.container{
         display: grid;
         grid-template-columns: 160px auto;
     }
 
-    .wrapper{
+    header{
+        grid-column: 1 / span 1;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-content: space-around;
+    }
+
+    header #header-logo{
+        width: 70%;
+        height: auto;
+        padding: 25px 0;
+        margin: 0;
+    }
+
+    #mobile-panel{
+        display: none;
+    }
+
+    header nav span{
+        display: none;
+    }
+
+    header #desktop-panel{
+        padding: 0;
+        margin: 30px;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-content: space-around;
+    }
+
+    header ul li{
+        padding-bottom: 35px;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    header ul li a:link,a:visited,a:active,a:hover{
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    header ul li a:link,a:visited,a:active{
+        color: #fff;
+    }
+
+    header ul li a:hover{
+        color: #48c8f5;
+    }
+
+    .signOutButton{
+        padding: 25px;
+        width: 50px;
+        overflow: visible;
+    }
+
+    #desktop-panel:after{
+        content: "Sign Out";
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        padding-top: 200px;
+    }
+
+    .content-wrapper{
         grid-column: 2 / span 1;
         width: 100%;
         height: 100%;
-    	background-color: #0e394b;
-    	box-shadow: 10px 0px 10px #081f2f inset;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
     }
 
     .dropdown-content button{
@@ -486,12 +641,28 @@ body {
     font-weight: 400;
     }
 
+
+
+    .dropBtn{
+        position:relative;
+        padding:0;
+        height:30px;
+        width:50px;
+        font-size:20px;
+        font-weight:400;
+    }
+
+    .desktopFloor{
+        color:white;
+        font-size:20px;
+        font-weight:400;
+    }
+
     .signOutButton{
-    display: block;
-    width: 150%;
-    height: 100%;
-    padding-right: 20%;
-    margin-top: 450%;
+        display: block;
+        width: 150%;
+        height: 100%;
+        padding-right: 20%;
     }
 
     .ciitVideo{
@@ -504,6 +675,26 @@ body {
 
     .ciitVideo iframe{
         min-height: 360px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      width: 290%;
+      height: 180%;
+      z-index: 2;
+    }
+
+    .dropdown-content button {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding-right: 25%;
+      background: #0e394b;
+    }
+
+    #first_floor_image{
+        text-align: left;
     }
 }
 

@@ -298,12 +298,33 @@ iframe {
 		font-weight: 400;
 	}
 
+    .help{
+        color: #ffffff;
+    }
+    /*
+    .authorizeButton{
+    display: block;
+    width: 150%;
+    height: 100%;
+    padding-right: 20%;
+    font-size: 20px;
+    }
+
     .signOutButton{
     display: block;
     width: 150%;
     height: 100%;
     padding-right: 20%;
     font-size: 20px;
+    }
+    */
+
+    body header nav ul li button{
+        display: block;
+        width: 150%;
+        height: 100%;
+        padding-right: 20%;
+        font-size: 20px;
     }
 
     .signOutButton:hover{

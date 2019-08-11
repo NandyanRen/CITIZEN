@@ -28,7 +28,7 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../twitter/index.html">Twitter</a></li>
         <li><a href="../facebook/index.html">Facebook</a></li>
-        <li><a href="../gmail/readEmail.py">Gmail</a></li>
+        <li><a href="../gmail/index.html">Gmail</a></li>
         <li><a href="index.php">Staff</a></li>
       </ul>
     </nav>
@@ -39,7 +39,7 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../twitter/index.html">Twitter</a></li>
         <li><a href="../facebook/index.html">Facebook</a></li>
-        <li><a href="../gmail/readEmail.py">Gmail</a></li>
+        <li><a href="../gmail/index.html">Gmail</a></li>
         <li><a href="index.php">Staff</a></li>
     </ul>
 

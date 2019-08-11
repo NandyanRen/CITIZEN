@@ -26,7 +26,9 @@
             <li><a href="../facebook/index.html">Facebook</a></li>
             <li><a href="index.html">Gmail</a></li>
             <li><a href="../staff_info/index.php">Staff</a></li>
-            <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li> 
+            <li><button onclick="signOut()" class="signOutButton">Sign Out</button></li>
+            <li><button id="authorize-button" class="authorizeButton">Authorize</button></li>
+            <li><p class="help">not loading? click Authorize</p></li>
           </ul>
         </nav>
       </header>
@@ -53,8 +55,6 @@
       </div>
   </div>
 
-  <button id="authorize-button" class="btn btn-primary hidden">Authorize</button>
-
     <script type="text/javascript">
 
       // GOOGLE API AUTHENTICATION
@@ -70,7 +70,6 @@
         gapi.auth.authorize({
           client_id: clientId,
           scope: scopes,
-          immediate: true
         }, handleAuthResult);
       }
 
@@ -88,7 +87,7 @@
           loadGmailApi();
           $('#authorize-button').remove();
           $('.table-inbox').removeClass("hidden");
-        } else {
+        } else {  
           $('#authorize-button').removeClass("hidden");
           $('#authorize-button').on('click', function(){
             handleAuthClick();
