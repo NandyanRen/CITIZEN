@@ -19,15 +19,17 @@
       <ul>
         <li><a href="control_panel.php">Control Panel</a></li>
         <li><a href="staff_reg.php">Register</a></li>
-        <li><a href="staff_update.php">Update</a></li>
-        <li><a href="staff_delete.php">Delete</a></li>
+        <li><a href="staff_updateOrDelete.php">Update or Delete</a></li>
       </ul>
     </nav>
   </header>
 <div id="wrapper">
-  <form action="update_step.php" method="post" enctype="multipart/form-data">
-    Enter Name of Staff to Update: <br />
-    <input type="text" name="updateStaff" id="updateStaff" required><br />
+  <form action="update_step.php" method="post" enctype="multipart/form-data" onsubmit="return confirmUpdate();">
+    <?php
+      $updateStaff = $_POST['updateStaff'];
+      echo "User being updated: " . $updateStaff . "<br />"; 
+    ?>
+    <input type="hidden" name="updateStaff" id="updateStaff" value="<?php echo $updateStaff; ?>"><br />
     New Full Name: <br />
     <input type="text" name="full_name_new" id="full_name_new" required><br />
     New Position: <br />
@@ -45,6 +47,9 @@
   <p id="db_precheck"></p>
 </div>
 <script type="text/javascript">
+  function confirmUpdate() {
+    return confirm('Are you sure about the information you are about to update?');
+  }
   function check_db() {
       var file_check = <?php 
         if(file_exists('staff_db')) {

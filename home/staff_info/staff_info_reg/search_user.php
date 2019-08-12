@@ -42,7 +42,10 @@
     }
 
   function confirmDelete() {
-    return confirm('are you sure you want to delete this data?');
+    return confirm('Are you sure you want to delete this data?');
+  }
+  function confirmUser() {
+    return confirm('Update this user?');
   }
 </script>
 
@@ -54,8 +57,7 @@
   		<ul>
         <li><a href="control_panel.php">Control Panel</a></li>
         <li><a href="staff_reg.php">Register</a></li>
-        <li><a href="staff_update.php">Update</a></li>
-        <li><a href="staff_delete.php">Delete</a></li>
+        <li><a href="staff_updateOrDelete.php">Update or Delete</a></li>
   		</ul>
   	</nav>
   </header>
@@ -109,6 +111,10 @@
               <form class='deleteform' id='delete_form' action='deleter.php' method='post' onsubmit='return confirmDelete();'>
                 <input type='hidden' name='deleteStaff' id='deleteStaff' value='$searchStaff'/>
                 <input type='submit' name='submitDelete' id='submitDelete' value='Delete'>
+              </form>
+              <form class='updateform' id='update_form' action='staff_update.php' method='post' onsubmit='return confirmUser();'>
+                <input type='hidden' name='updateStaff' id='updateStaff' value='$searchStaff'/>
+                <input type='submit' name='submitUpdate' id='submitUpdate' value='Update'>
               </form>
             </div>";
       break;
