@@ -60,21 +60,21 @@
         for($x = 0; $x < sizeof($breaksecond) - 1; $x++) {
           $compare_result = strcmp(strtolower($updateStaff),strtolower($breaksecond[$x]));
           if($compare_result === 0) {
-            $checkNum = 0;
+            $checkNum = "exist";
             echo "User found: <br />" . $breaksecond[$x] . "<br />";
             $valForUpdate = $breaksecond[$x] . "-divider-" . $breaksecond[$x+1] . "-divider-" . $breaksecond[$x+2] . "-divider-" . $breaksecond[$x+3] . "-divider-" . $breaksecond[$x+4] . "-divider-" . $breaksecond[$x+5] . "-linestop-";
             $picForUpdate = "staff_db/staff_picture/" . $breaksecond[$x+5];
             break;
           }
           else {
-            $checkNum = 1;  
+            $checkNum = "notexist";  
           }
         }
-        if ($checkNum === 0) {
+        if ($checkNum === "exist") {
           break;
         }
       }
-      if($checkNum !== 0) {
+      if($checkNum === "notexist") {
         echo "No name found.";
       }
       else {
