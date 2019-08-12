@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="staff_delete.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="container" onload="check_db();">
@@ -24,14 +23,17 @@
   		</ul>
   	</nav>
   </header>
+
 <div id="wrapper">
-  <form id="delete_form" action="deleter.php" method="post">
+    <form id="search_user" action="search_user.php" method="post">
     Enter Staff Name to Delete: <br />
-    <input type="text" name="deleteStaff" id="deleteStaff" required>
-    <input type="submit" name="submitDelete" id="submitDelete">
-  </form>
+    <input type="text" name="searchStaff" id="searchStaff" required>
+    <input type="submit" name="searchUser" id="searchUser" value="Search User">
+    </form>
+  
   <p id="db_precheck"></p>
 </div>
+    
 <script type="text/javascript">
   function check_db() {
       var file_check = <?php 
@@ -52,6 +54,7 @@
           echo 2;
         }
       ?>;
+
       if (file_check !== 1) {
         document.getElementById("db_precheck").innerHTML = "Files/folders are missing!";
         document.getElementById("db_precheck").style.color = "red";

@@ -39,13 +39,11 @@
     $file_content = "";
   }
   fclose($myfile);
-
   //first level of breaking db content
   $breakfirst = explode("-linestop-", $file_content);
   //second level of breaking of db content
   for($i = 0; $i < count($breakfirst) - 1; $i++) {
     $breaksecond = explode("-divider-", $breakfirst[$i]);
-
     for($x = 0; $x < sizeof($breaksecond) - 1; $x++) {
       $compare_result = strcmp(strtolower($deleteStaff),strtolower($breaksecond[$x]));
       if($compare_result === 0) {

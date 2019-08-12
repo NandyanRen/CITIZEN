@@ -212,7 +212,7 @@ body {
 
 /*Staff Info Card*/
 .info_card {
-    display: none;
+    display: grid;
     grid-template-rows: 170px auto auto;
     justify-items: center;
     align-items: center;
