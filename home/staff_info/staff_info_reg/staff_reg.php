@@ -19,8 +19,7 @@
   		<ul>
         <li><a href="control_panel.php">Control Panel</a></li>
         <li><a href="staff_reg.php">Register</a></li>
-        <li><a href="staff_update.php">Update</a></li>
-        <li><a href="staff_delete.php">Delete</a></li>
+                <li><a href="staff_updateOrDelete.php">Update or Delete</a></li>
   		</ul>
   	</nav>
   </header>
@@ -41,7 +40,7 @@
       <input type="date" name="staff_birthday" id="staff_birthday" min="1950-01-01" max="2019-12-31" required><br />
       Picture: (please use .png files)<br />
       <input type="file" name="staff_img" id="staff_img" accept="image/x-png" required><br /><br />
-      <input type="checkbox" name="agreement" required> By checking this, you acknowledge that the following information will be displayed publicly.<br /><br />
+      <input type="checkbox" name="agreement" required> By checking this, you acknowledge that the following information will be displayed publicly. This is in compliance with the <a id="dataPriv" href="https://www.privacy.gov.ph/data-privacy-act/">Data Privacy Act 2012</a>.<br /><br />
       <input type="submit" name="submitBtn" id="submitBtn">
       <p id="db_precheck"></p>
     </form>
